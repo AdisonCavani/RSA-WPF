@@ -47,51 +47,41 @@
             </Setter>
         </Style>
 
+        <!--Close button-->
         <Style x:Key="CloseButton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#fc5753"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Width" Value="25"/>
-            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border
-                            CornerRadius="25"
-                            Background="#DF4744"
-                            BorderThickness="3">
-
-                            <ContentPresenter
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
+                        <Ellipse
+                            Fill="#fc5753"
+                            Stroke="#df4744"
+                            StrokeThickness="1">
+                        </Ellipse>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
 
+
+        <!--Minimize button-->
         <Style x:Key="MinimizeButton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#fdbc40"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Width" Value="25"/>
-            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border
-                            CornerRadius="25"
-                            Background="#de9f34"
-                            BorderThickness="3">
-
-                            <ContentPresenter
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
+                        <Ellipse
+                            Fill="#fdbc40"
+                            Stroke="#de9f34"
+                            StrokeThickness="1"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
