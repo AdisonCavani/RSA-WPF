@@ -63,5 +63,15 @@ namespace RSA_WPF
                 ProfileImage = "\\assets\\profile1.jpg";
             }
         }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeButtton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }
