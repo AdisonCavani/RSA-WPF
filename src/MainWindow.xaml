@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RSA_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1115"
+        Title="MainWindow" Height="650" Width="1000"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ResizeMode="CanResize">
+        ResizeMode="NoResize">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -37,19 +37,19 @@
                         Width="50">
                         <Ellipse.Fill>
                             <ImageBrush
-                                ImageSource="/assets/profile1.jpg"
+                                ImageSource="{Binding ProfileImage}"
                                 Stretch="UniformToFill"/>
                         </Ellipse.Fill>
                     </Ellipse>
                     <TextBlock
                         HorizontalAlignment="Center"
                         Margin="0, 10"
-                        Text="Adison"
+                        Text="{Binding ProfileName}"
                         Style="{StaticResource MainText}"/>
                 </StackPanel>
 
                 <!--#region Menu Buttons Section-->
-                <StackPanel Orientation="Vertical" Margin="0,30,0,0">
+                <StackPanel Orientation="Vertical">
                     <TextBlock
                         Margin="65,0"
                         Text="ENCRYPTION"
@@ -72,15 +72,16 @@
                         Text="Generate" 
                         GroupName="MenuButton"/>
                 </StackPanel>
+                
+                <customcontrols:MenuButton
+                    DockPanel.Dock="Bottom"
+                    Padding="65,0,0,0"
+                    Margin="0, 270"
+                    Icon="{StaticResource Folders}"
+                    Text="Settings" 
+                    GroupName="MenuButton"/>
 
-                <StackPanel Orientation="Vertical" Margin="0,60,0,0">
-                    <customcontrols:MenuButton
-                        Padding="65,0,0,0"
-                        Icon="{StaticResource Folders}"
-                        Text="Settings" 
-                        GroupName="MenuButton"/>
-                </StackPanel>
-                <!--#endregion-->
+                    <!--#endregion-->
             </StackPanel>
         </Grid>
 
@@ -88,29 +89,7 @@
         <Grid
                 Grid.Column="1"
                 Background="#EFF2F8">
-
-            <!--Left icon-->
-            <Path
-                    Data="{StaticResource Left}"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="60, 45"
-                    Stretch="UniformToFill"
-                    Width="22"
-                    Height="17"
-                    Fill="#C2C3C3"/>
-
-            <!--Right icon-->
-            <Path
-                    Data="{StaticResource Right}"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="101, 45"
-                    Stretch="UniformToFill"
-                    Width="22"
-                    Height="17"
-                    Fill="#C2C3C3"/>
-
+            
             <Button
                 Content="ENCRYPT"
                 HorizontalAlignment="Right"
