@@ -4,6 +4,48 @@
              xmlns:local="clr-namespace:RSA_WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="TitleText" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="#C2C3C3"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
+        </Style>
+
+        <Style x:Key="MainText" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontFamily" Value="Segoe UI Bold"/>
+            <!--<Setter Property="Margin" Value="11, 0"/>-->
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#6D78CB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="174"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            CornerRadius="20"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

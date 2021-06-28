@@ -1,12 +1,133 @@
-﻿<Window x:Class="RSA_WPF.MainWindow"
+﻿<Window xmlns:customcontrols="clr-namespace:RSA_WPF.customcontrols"  x:Class="RSA_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RSA_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="900" Width="1115"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="CanResize">
 
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/res/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!--Layouting-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <StackPanel
+                Orientation="Vertical"
+                Margin="0, 0, 0, 0">
+
+                <!--#region Menu Buttons Section-->
+                <StackPanel Orientation="Vertical" Margin="0,150,0,0">
+                    <TextBlock
+                        Margin="65,0"
+                        Text="ENCRYPTION"
+                        Style="{StaticResource TitleText}"/>
+
+                    <customcontrols:MenuButton
+                        Margin="0,0,0,0"
+                        Padding="65,0,0,0"
+                        Icon="{StaticResource MyFilesFolder}"
+                        Text="Encrypt" 
+                        GroupName="MenuButton"/>
+                    <customcontrols:MenuButton
+                        Padding="65,0,0,0"
+                        Icon="{StaticResource Shared}"
+                        Text="Decrypt" 
+                        GroupName="MenuButton"/>
+                    <customcontrols:MenuButton
+                        Padding="65,0,0,0"
+                        Icon="{StaticResource Filerequest}"
+                        Text="Generate" 
+                        GroupName="MenuButton"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,60,0,0">
+                    <customcontrols:MenuButton
+                        Padding="65,0,0,0"
+                        Icon="{StaticResource Folders}"
+                        Text="Settings" 
+                        GroupName="MenuButton"/>
+                </StackPanel>
+                <!--#endregion-->
+            </StackPanel>
+            <!--Profile Image and Username Code-->
+            <StackPanel
+                Height="140"
+                VerticalAlignment="Top">
+                <Grid
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0, 35, 0, 0">
+
+                    <Ellipse
+                    Height="50"
+                    Width="50"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+                        <Ellipse.Fill>
+                            <ImageBrush
+                            ImageSource="/assets/profile1.jpg"
+                            Stretch="UniformToFill"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+                <Grid
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Margin="0, 10">
+                    <TextBlock
+                        Text="Adison"
+                        Style="{StaticResource MainText}"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <!--Center page-->
+        <Grid
+                Grid.Column="1"
+                Background="#EFF2F8">
+
+            <!--Left icon-->
+            <Path
+                    Data="{StaticResource Left}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="60, 45"
+                    Stretch="UniformToFill"
+                    Width="22"
+                    Height="17"
+                    Fill="#C2C3C3"/>
+
+            <!--Right icon-->
+            <Path
+                    Data="{StaticResource Right}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="101, 45"
+                    Stretch="UniformToFill"
+                    Width="22"
+                    Height="17"
+                    Fill="#C2C3C3"/>
+
+            <Button
+                Content="ENCRYPT"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0, 34, 67, 0"
+                Style="{StaticResource PrimaryButton}"/>
+        </Grid>
     </Grid>
 </Window>
