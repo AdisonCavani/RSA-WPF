@@ -64,35 +64,9 @@ namespace RSA_WPF
             }
         }
 
-        private string closeButton_OnHover;
-
-        public string CloseButton_OnHover
-        {
-            get { return closeButton_OnHover; }
-            set { closeButton_OnHover = value; }
-        }
-
-        public void CloseButton_Hover()
-        {
-            CloseButton_OnHover = "Visible";
-        }
-
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private string minimizeButton_OnHover;
-
-        public string MinimizeButton_OnHover
-        {
-            get { return minimizeButton_OnHover; }
-            set { minimizeButton_OnHover = value; }
-        }
-
-        public void MinimizeButton_Hover()
-        {
-            MinimizeButton_OnHover = "Visible";
         }
 
 
