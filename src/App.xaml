@@ -60,7 +60,7 @@
                         <Ellipse
                             Fill="#fc5753"
                             Stroke="#df4744"
-                            StrokeThickness="1">
+                            StrokeThickness="1.5">
                         </Ellipse>
                     </ControlTemplate>
                 </Setter.Value>
@@ -81,7 +81,7 @@
                         <Ellipse
                             Fill="#fdbc40"
                             Stroke="#de9f34"
-                            StrokeThickness="1"/>
+                            StrokeThickness="1.5"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
