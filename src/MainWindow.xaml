@@ -62,17 +62,17 @@
                     <customcontrols:MenuButton
                         Margin="0,0,0,0"
                         Padding="65,0,0,0"
-                        Icon="{StaticResource MyFilesFolder}"
+                        Icon="{StaticResource Lock}"
                         Text="Encrypt" 
                         GroupName="MenuButton"/>
                     <customcontrols:MenuButton
                         Padding="65,0,0,0"
-                        Icon="{StaticResource Shared}"
+                        Icon="{StaticResource Unlock}"
                         Text="Decrypt" 
                         GroupName="MenuButton"/>
                     <customcontrols:MenuButton
                         Padding="65,0,0,0"
-                        Icon="{StaticResource Filerequest}"
+                        Icon="{StaticResource Generate}"
                         Text="Generate" 
                         GroupName="MenuButton"/>
                 </StackPanel>
@@ -81,7 +81,7 @@
                     DockPanel.Dock="Bottom"
                     Padding="65,0,0,0"
                     Margin="0, 270"
-                    Icon="{StaticResource Folders}"
+                    Icon="{StaticResource Settings}"
                     Text="Settings" 
                     GroupName="MenuButton"/>
 
