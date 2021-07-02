@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Name="this"
              Background="White">
-             <!--d:DesignHeight="450" d:DesignWidth="800"-->
+    <!--d:DesignHeight="450" d:DesignWidth="800"-->
 
 
     <UserControl.Resources>
@@ -27,12 +27,11 @@
             <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
             <Setter Property="Margin" Value="11, 0, 0, 0"/>
 
-
             <!--Change foreground on MouseOver and Menu item Selection-->
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
-                    <Setter Property="Foreground" Value="#515EC1"/>
+                    <Setter Property="Foreground" Value="Black"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
@@ -63,7 +62,6 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-
                                 <!--The fallbackvalue is used when the binding path is not correct or null, so we can set default value to use insted of that in case.. like we are using default icon here... and so does happen with Targetnullvalue... when there is no value provided from source our binding will use default value-->
                                 <Path
                                     Data="{Binding Icon,
@@ -74,7 +72,7 @@
                                     Stretch="Uniform"
                                     Height="17"
                                     Width="18"
-                                    Fill="#515EC1"/>
+                                    Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"/>
 
                                 <TextBlock
                                     Style="{StaticResource MenuTextStyle}"
