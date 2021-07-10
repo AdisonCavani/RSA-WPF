@@ -5,14 +5,14 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="TitleText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#C2C3C3"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="10"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
+            <Setter Property="FontFamily" Value="Museo Sans 700"/>
         </Style>
 
         <Style x:Key="MainText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="22"/>
@@ -21,7 +21,7 @@
         </Style>
 
         <Style x:Key="PrimaryButton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#6D78CB"/>
+            <Setter Property="Background" Value="#333536"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Width" Value="174"/>
             <Setter Property="Height" Value="36"/>
