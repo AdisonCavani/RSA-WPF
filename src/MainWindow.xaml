@@ -28,14 +28,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid
-            Grid.Column="0"
-            Grid.Row="2">
+            Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel
                 Orientation="Vertical"
-                Margin="0,0,0,0"
                 Background="#1b1d1f">
 
                 <!--Profile Image and Username Code-->
@@ -58,41 +56,37 @@
                 </StackPanel>-->
 
                 <!--#region Menu Buttons Section-->
-                <StackPanel Orientation="Vertical"
-                            Margin="0, 90, 0, 0">
-                    <TextBlock
-                        Margin="30,0,0,15"
+                <TextBlock
+                        Margin="20,90,0,15"
                         Text="M E N U"
                         Style="{StaticResource TitleText}"/>
 
-                    <customcontrols:MenuButton
+                <customcontrols:MenuButton
                         Margin="0,0,0,0"
-                        Padding="30,0,0,0"
+                        Padding="0,0,0,0"
                         Icon="{StaticResource Lock}"
                         Text="Encrypt" 
                         GroupName="MenuButton"/>
-                    <customcontrols:MenuButton
-                        Padding="30,0,0,0"
-                        Icon="{StaticResource Unlock}"
+                <customcontrols:MenuButton
+                        Padding="0,0,0,0"
+                        Icon="{StaticResource Visibility}"
                         Text="Decrypt" 
                         GroupName="MenuButton"/>
-                    <customcontrols:MenuButton
-                        Padding="30,0,0,0"
-                        Icon="{StaticResource Generate}"
+                <customcontrols:MenuButton
+                        Padding="0,0,0,0"
+                        Icon="{StaticResource Code}"
                         Text="Generate" 
                         GroupName="MenuButton"/>
-                </StackPanel>
-
-                <customcontrols:MenuButton
+            </StackPanel>
+            <customcontrols:MenuButton
                     DockPanel.Dock="Bottom"
-                    Padding="30,0,0,0"
-                    Margin="0, 325"
+                    Padding="0,0,0,0"
+                    Margin="0,570,0,0"
                     Icon="{StaticResource Settings}"
                     Text="Settings" 
                     GroupName="MenuButton"/>
 
                 <!--#endregion-->
-            </StackPanel>
         </Grid>
 
         <!--Center page-->
@@ -108,57 +102,46 @@
 
             <Grid
                 Grid.Row="0"
-
                 Cursor="Hand">
 
                 <!--Close button-->
                 <Button
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="0, 10, 10, 0"
-                Click="CloseButton_Click"
-                Style="{StaticResource CloseButton}">
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0,0,10,0"
+                    Width="35"
+                    Height="35"
+                    Cursor="Hand"
+                    Click="CloseButton_Click"
+                    Style="{StaticResource ControlButton}">
+                    <Path
+                        Data="{StaticResource Close}"
+                        Fill="#a6a6a6"
+                        Stretch="Uniform"
+                        Width="15"
+                        Height="15">
+                    </Path>
                 </Button>
-                <Path
-                Width="10"
-                Height="10"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="13"
-                Data="M 11 5 L 11 11 L 5 11 L 5 13 L 11 13 L 11 19 L 13 19 L 13 13 L 19 13 L 19 11 L 13 11 L 13 5 L 11 5 z"
-                Fill="#7e0508"
-                Stretch="Fill"
-                Cursor="Hand"
-                MouseDown="CloseButton_Click">
-                    <Path.LayoutTransform>
-                        <RotateTransform Angle="45"></RotateTransform>
-                    </Path.LayoutTransform>
-                </Path>
 
                 <!--Minimalize button-->
                 <Button
-                Content=""
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="0, 10, 38, 0"
-                Click="MinimizeButton_Click"
-                Style="{StaticResource MinimizeButton}">
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0,0,45,0"
+                    Width="35"
+                    Height="35"
+                    Cursor="Hand"
+                    Click="MinimizeButton_Click"
+                    Style="{StaticResource ControlButton}">
+                    <Path
+                        Data="{StaticResource Minimize}"
+                        Stretch="Uniform"
+                        Fill="#a6a6a6"
+                        Width="15"
+                        Height="15">
+                    </Path>
                 </Button>
-                <Path
-                Width="14"
-                Height="2"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="0,19,41,0"
-                Stroke="#985712"
-                StrokeThickness="2"
-                Stretch="Fill"
-                Cursor="Hand"
-                MouseDown="MinimizeButton_Click">
-                    <Path.Data>
-                        <LineGeometry StartPoint="0,0" EndPoint="1,0" />
-                    </Path.Data>
-                </Path>
+
             </Grid>
 
             <Grid
