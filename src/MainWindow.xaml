@@ -80,14 +80,13 @@
                     GroupName="MenuButton"/>
             </StackPanel>
             <customcontrols:MenuButton
-                    DockPanel.Dock="Bottom"
-                    Padding="0,0,0,0"
-                    Margin="0,570,0,0"
-                    Icon="{StaticResource Settings}"
-                    Text="Settings" 
-                    GroupName="MenuButton"/>
-
-                <!--#endregion-->
+                DockPanel.Dock="Bottom"
+                Padding="0,0,0,0"
+                Margin="0,570,0,0"
+                Icon="{StaticResource Settings}"
+                Text="Settings" 
+                GroupName="MenuButton"/>
+            <!--#endregion-->
         </Grid>
 
         <!--Center page-->
@@ -147,12 +146,15 @@
 
             <Grid
                 Grid.Row="1">
-                <Button
+                <Frame
+                    x:Name="Main"
+                    NavigationUIVisibility="Hidden"/>
+                <!--<Button
                 Content="ENCRYPT"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Margin="0, 34, 67, 0"
-                Style="{StaticResource PrimaryButton}"/>
+                Style="{StaticResource PrimaryButton}"/>-->
             </Grid>
 
         </Grid>

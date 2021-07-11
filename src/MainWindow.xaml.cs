@@ -82,5 +82,10 @@ namespace RSA_WPF
                 this.DragMove();
             }
         }
+
+        private void SettingsButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Main.Content = new SettingsPage();
+        }
     }
 }
