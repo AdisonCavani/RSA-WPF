@@ -90,13 +90,13 @@
                                 Value="True">
                                 <Setter Property="IsChecked" Value="True"/>
                             </DataTrigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#232527"/>
+                            </Trigger>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter Property="Background" Value="#333536"/>
                                 <Setter TargetName="icon" Property="Fill" Value="#8591be"/>
                             </Trigger>
-                            <!--<Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#1B1D1F"/>
-                            </Trigger>-->
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
