@@ -62,21 +62,22 @@
                         Style="{StaticResource TitleText}"/>
 
                 <customcontrols:MenuButton
-                        Margin="0,0,0,0"
-                        Padding="0,0,0,0"
-                        Icon="{StaticResource Lock}"
-                        Text="Encrypt" 
-                        GroupName="MenuButton"/>
+                    Margin="0,0,0,0"
+                    Padding="0,0,0,0"
+                    Icon="{StaticResource Lock}"
+                    IsSelected="True"
+                    Text="Encrypt" 
+                    GroupName="MenuButton"/>
                 <customcontrols:MenuButton
-                        Padding="0,0,0,0"
-                        Icon="{StaticResource Visibility}"
-                        Text="Decrypt" 
-                        GroupName="MenuButton"/>
+                    Padding="0,0,0,0"
+                    Icon="{StaticResource Visibility}"
+                    Text="Decrypt" 
+                    GroupName="MenuButton"/>
                 <customcontrols:MenuButton
-                        Padding="0,0,0,0"
-                        Icon="{StaticResource Code}"
-                        Text="Generate" 
-                        GroupName="MenuButton"/>
+                    Padding="0,0,0,0"
+                    Icon="{StaticResource Code}"
+                    Text="Generate" 
+                    GroupName="MenuButton"/>
             </StackPanel>
             <customcontrols:MenuButton
                     DockPanel.Dock="Bottom"
