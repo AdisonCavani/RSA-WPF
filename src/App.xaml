@@ -4,8 +4,11 @@
              xmlns:local="clr-namespace:RSA_WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
+        <!--#region Text styles-->
         <Style x:Key="TitleText" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="FontSize" Value="10"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="FontFamily" Value="Museo Sans 700"/>
@@ -20,6 +23,16 @@
             <Setter Property="FontFamily" Value="Segoe UI Bold"/>
         </Style>
 
+        <Style x:Key="NormalText" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="#6e7072"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+        <!--#endregion-->
+
+        <!--#region Buttons styles-->
         <Style x:Key="PrimaryButton" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#333536"/>
             <Setter Property="Foreground" Value="White"/>
@@ -74,6 +87,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--#endregion-->
 
     </Application.Resources>
 </Application>

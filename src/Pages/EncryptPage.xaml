@@ -11,11 +11,38 @@
       Background="#121416">
 
     <Grid>
-        <TextBlock
-            Text="Encrypt Page"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="32"
-            Foreground="White"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="0">
+            <Border
+                Width="692"
+                Height="85"
+                CornerRadius="7"
+                Background="#1b1d1f">
+                <Grid>
+                    <TextBlock
+                    Margin="20,28,0,0"
+                    Text="ENCRYPTION PAGE"
+                    Style="{StaticResource TitleText}"/>
+
+                    <TextBlock
+                    Margin="20,45,0,0"
+                    Text="Encrypt your plain text with RSA encryption"
+                    Style="{StaticResource NormalText}"/>
+
+                    <Image
+                        Source="/assets/encrypt_illustration.png"
+                        Margin="500,0,0,0"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid
+            Grid.Row="1">
+            
+        </Grid>
     </Grid>
 </Page>
