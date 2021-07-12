@@ -97,7 +97,6 @@
         <Grid
             Grid.Column="1"
             Grid.Row="1"
-            MouseDown="Grid_MouseDown"
             Background="#121416">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
@@ -106,7 +105,8 @@
 
             <Grid
                 Grid.Row="0"
-                Cursor="Hand">
+                Background="#121416"
+                MouseDown="Grid_MouseDown">
 
                 <!--Close button-->
                 <Button
@@ -149,10 +149,12 @@
             </Grid>
 
             <Grid
-                Grid.Row="1">
+                Grid.Row="1"
+                Background="#121416">
                 <Frame
                     x:Name="Main"
                     NavigationUIVisibility="Hidden"/>
+                
                 <!--<Button
                 Content="ENCRYPT"
                 HorizontalAlignment="Right"
