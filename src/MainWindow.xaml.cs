@@ -29,6 +29,9 @@ namespace RSA_WPF
             // Loading bindings
             ProfileName = Environment.UserName;
             GetProfileImage();
+
+            // Loading default page
+            Main.Content = new EncryptPage();
         }
 
         private string profileName;
