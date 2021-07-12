@@ -83,6 +83,21 @@ namespace RSA_WPF
             }
         }
 
+        private void EncryptButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Main.Content = new EncryptPage();
+        }
+
+        private void DecryptButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Main.Content = new DecryptPage();
+        }
+
+        private void GenerateButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Main.Content = new GeneratePage();
+        }
+
         private void SettingsButton_Click(object sender, MouseButtonEventArgs e)
         {
             Main.Content = new SettingsPage();
