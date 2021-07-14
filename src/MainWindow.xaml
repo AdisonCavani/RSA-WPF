@@ -145,24 +145,14 @@
                         Height="15">
                     </Path>
                 </Button>
-
             </Grid>
-
             <Grid
                 Grid.Row="1"
                 Background="#121416">
                 <Frame
                     x:Name="Main"
                     NavigationUIVisibility="Hidden"/>
-                
-                <!--<Button
-                Content="ENCRYPT"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="0, 34, 67, 0"
-                Style="{StaticResource PrimaryButton}"/>-->
             </Grid>
-
         </Grid>
     </Grid>
 </Window>

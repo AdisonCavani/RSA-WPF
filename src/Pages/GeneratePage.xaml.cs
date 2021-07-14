@@ -1,7 +1,10 @@
-﻿using System;
+﻿using RSA;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +26,26 @@ namespace RSA_WPF
         public GeneratePage()
         {
             InitializeComponent();
+            KeySize.SelectedIndex = 2; // Default key lenght - 2048
+        }
+
+        private void EncryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            var keyPair = RsaEncryption.GenerateKeyPair();
+            PrivateKeyTextBox.Text = keyPair.Item1;
+            PublicKeyTextBox.Text = keyPair.Item2;
+        }
+
+        private void KeySize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = (ComboBoxItem)KeySize.SelectedValue;
+            string keySize = (string)item.Content;
+
+            // Remove all, except numbers
+            Regex rgx = new Regex(@"[^\d]");
+            keySize = rgx.Replace(keySize, "");
+
+            RsaEncryption.KeyValue = int.Parse(keySize);
         }
     }
 }

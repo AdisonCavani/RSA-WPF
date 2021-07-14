@@ -41,8 +41,59 @@
             </Border>
         </Grid>
         <Grid
-            Grid.Row="1">
+            Grid.Row="1"
+            Background="#121416">
 
+            <TextBlock
+                    Margin="550,100,0,0"
+                    Text="Public key"
+                    Style="{StaticResource NormalText}"/>
+
+            <TextBlock
+                    Margin="150,100,0,0"
+                    Text="Private key"
+                    Style="{StaticResource NormalText}"/>
+
+            <ComboBox
+                x:Name="KeySize"
+                Width="100"
+                Height="20"
+                SelectionChanged="KeySize_SelectionChanged">
+                <ComboBoxItem>512 bit</ComboBoxItem>
+                <ComboBoxItem>1024 bit</ComboBoxItem>
+                <ComboBoxItem>2048 bit</ComboBoxItem>
+                <ComboBoxItem>3072 bit</ComboBoxItem>
+                <ComboBoxItem>4096 bit</ComboBoxItem>
+            </ComboBox>
+
+            <Button
+                x:Name="EncryptButton"
+                Width="90"
+                Height="30"
+                Content="Generate"
+                Margin="0, 100, 0, 0"
+                Click="EncryptButton_Click"
+                Style="{StaticResource PrimaryButton}"/>
+
+            <TextBox
+                x:Name="PublicKeyTextBox"
+                Width="200"
+                Height="200"
+                Background="White"
+                Margin="400,0,0,0"
+                IsReadOnly="True"
+                TextWrapping="Wrap"
+                Cursor="Hand"/>
+
+            <TextBox
+                x:Name="PrivateKeyTextBox"
+                Width="200"
+                Height="200"
+                Background="White"
+                Margin="-400,0,0,0"
+                IsReadOnly="True"
+                TextWrapping="Wrap"
+                Cursor="Hand"/>
         </Grid>
     </Grid>
 </Page>
