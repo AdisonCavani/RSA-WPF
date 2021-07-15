@@ -35,8 +35,9 @@
                     Style="{StaticResource NormalText}"/>
 
                     <Image
-                        Source="/assets/encrypt_illustration.png"
-                        Margin="500,0,0,0"/>
+                        Source="/assets/encrypt.png"
+                        Margin="520,0,0,0"/>
+
                 </Grid>
             </Border>
         </Grid>

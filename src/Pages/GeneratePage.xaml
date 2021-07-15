@@ -43,8 +43,8 @@
                     Style="{StaticResource NormalText}"/>
 
                     <Image
-                        Source="/assets/generate_illustration.png"
-                        Margin="520,0,0,0"/>
+                        Source="/assets/generate.png"
+                        Margin="540,0,0,0"/>
                 </Grid>
             </Border>
         </Grid>
