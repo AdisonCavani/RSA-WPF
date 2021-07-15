@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -29,7 +28,7 @@ namespace RSA_WPF
             KeySize.SelectedIndex = 2; // Default key lenght - 2048
         }
 
-        private void EncryptButton_Click(object sender, RoutedEventArgs e)
+        private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
             var keyPair = RsaEncryption.GenerateKeyPair();
             PrivateKeyTextBox.Text = keyPair.Item1;
@@ -51,21 +50,21 @@ namespace RSA_WPF
         private void CopyPrivateKey(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(PrivateKeyTextBox.Text);
-            if (true)
-            {
-                Task.Delay(15000).Wait();
-                Clipboard.Clear();
-            }
+            //if (true)
+            //{
+            //    Task.Delay(15000).Wait();
+            //    Clipboard.Clear();
+            //}
         }
 
         private void CopyPublicKey(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(PublicKeyTextBox.Text);
-            if (true)
-            {
-                Task.Delay(15000).Wait();
-                Clipboard.Clear();
-            }
+            //if (true)
+            //{
+            //    Task.Delay(15000).Wait();
+            //    Clipboard.Clear();
+            //}
         }
     }
 }

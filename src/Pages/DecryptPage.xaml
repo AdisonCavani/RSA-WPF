@@ -43,6 +43,36 @@
         <Grid
             Grid.Row="1">
 
+            <TextBox
+                x:Name="PrivateKey"
+                Width="200"
+                Height="250"
+                TextWrapping="Wrap"
+                Margin="-550,0,0,0"/>
+
+            <TextBox
+                x:Name="CypherTextBox"
+                Width="200"
+                Height="250"
+                TextWrapping="Wrap"
+                Margin="-100,0,0,0"/>
+
+            <TextBox
+                x:Name="PlainTextBox"
+                Width="200"
+                Height="250"
+                TextWrapping="Wrap"
+                Margin="350,0,0,0"/>
+
+            <Button
+                x:Name="DecryptButton"
+                Width="90"
+                Height="30"
+                Content="Decrypt"
+                Margin="0, -400, 0, 0"
+                Click="DecryptButton_Click"
+                Style="{StaticResource PrimaryButton}"/>
+
         </Grid>
     </Grid>
 </Page>

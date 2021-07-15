@@ -1,6 +1,8 @@
-﻿using System;
+﻿using RSA;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,19 @@ namespace RSA_WPF
         public DecryptPage()
         {
             InitializeComponent();
+        }
+
+        private void DecryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string cypherText = CypherTextBox.Text;
+            string privateKey = PrivateKey.Text;
+
+            if (!string.IsNullOrEmpty(cypherText) && !string.IsNullOrEmpty(privateKey))
+            {
+                var output = RsaEncryption.Decrypt(cypherText, privateKey);
+
+                PlainTextBox.Text = output;
+            }
         }
     }
 }

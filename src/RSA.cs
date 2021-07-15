@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace RSA
 {
@@ -25,13 +27,13 @@ namespace RSA
             }
         }
 
-        public string Encrypt(string plainText, string publicKey)
+        public static string Encrypt(string plainText, string publicKey)
         {
-            using (var csp = new RSACryptoServiceProvider(keyValue))
+            using (var csp = new RSACryptoServiceProvider())
             {
                 try
                 {
-                    csp.ImportFromPem(publicKey.ToCharArray());
+                    csp.ImportRSAPublicKey(Convert.FromBase64String(publicKey), out int bytesRead);
 
                     var data = Encoding.Unicode.GetBytes(plainText);
                     var cypher = csp.Encrypt(data, false);
@@ -45,13 +47,13 @@ namespace RSA
             }
         }
 
-        public string Decrypt(string cypherText, string privateKey)
+        public static string Decrypt(string cypherText, string privateKey)
         {
-            using (var csp = new RSACryptoServiceProvider(keyValue))
+            using (var csp = new RSACryptoServiceProvider())
             {
                 try
                 {
-                    csp.ImportFromPem(privateKey.ToCharArray());
+                    csp.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out int bytesRead);
 
                     var dataBytes = Convert.FromBase64String(cypherText);
                     var plainText = csp.Decrypt(dataBytes, false);
@@ -71,8 +73,8 @@ namespace RSA
             {
                 try
                 {
-                    string priv = Convert.ToBase64String(csp.ExportPkcs8PrivateKey());
-                    string pub = Convert.ToBase64String(csp.ExportSubjectPublicKeyInfo());
+                    string priv = Convert.ToBase64String(csp.ExportRSAPrivateKey());
+                    string pub = Convert.ToBase64String(csp.ExportRSAPublicKey());
 
                     //string hdr = "-----BEGIN RSA PRIVATE KEY-----";
                     //string ftr = "-----END RSA PRIVATE KEY-----";
@@ -83,6 +85,8 @@ namespace RSA
                     //string PEM = $"{hdr}\n{priv}\n{ftr}";
 
                     return (priv, pub);
+
+                    //return csp
                 }
                 finally
                 {

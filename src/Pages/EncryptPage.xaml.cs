@@ -10,8 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using RSA;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RSA_WPF
 {
@@ -23,6 +25,19 @@ namespace RSA_WPF
         public EncryptPage()
         {
             InitializeComponent();
+        }
+
+        private void EncryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string plainText = PlainTextBox.Text;
+            string publicKey = PublicKey.Text;
+
+            if (!string.IsNullOrEmpty(plainText) && !string.IsNullOrEmpty(publicKey))
+            {
+                var output = RsaEncryption.Encrypt(plainText, publicKey);
+
+                CypherTextBox.Text = output;
+            }
         }
     }
 }

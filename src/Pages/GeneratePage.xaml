@@ -75,12 +75,12 @@
             </ComboBox>
 
             <Button
-                x:Name="EncryptButton"
+                x:Name="GenerateButton"
                 Width="90"
                 Height="30"
                 Content="Generate"
                 Margin="0, 100, 0, 0"
-                Click="EncryptButton_Click"
+                Click="GenerateButton_Click"
                 Style="{StaticResource PrimaryButton}"/>
 
             <!--<Path
