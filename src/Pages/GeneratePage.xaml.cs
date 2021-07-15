@@ -47,5 +47,25 @@ namespace RSA_WPF
 
             RsaEncryption.KeyValue = int.Parse(keySize);
         }
+
+        private void CopyPrivateKey(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(PrivateKeyTextBox.Text);
+            if (true)
+            {
+                Task.Delay(15000).Wait();
+                Clipboard.Clear();
+            }
+        }
+
+        private void CopyPublicKey(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(PublicKeyTextBox.Text);
+            if (true)
+            {
+                Task.Delay(15000).Wait();
+                Clipboard.Clear();
+            }
+        }
     }
 }

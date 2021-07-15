@@ -10,6 +10,14 @@
       Title="SettingsPage"
       Background="#121416">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/res/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -75,15 +83,17 @@
                 Click="EncryptButton_Click"
                 Style="{StaticResource PrimaryButton}"/>
 
-            <TextBox
-                x:Name="PublicKeyTextBox"
-                Width="200"
-                Height="200"
-                Background="White"
-                Margin="400,0,0,0"
-                IsReadOnly="True"
-                TextWrapping="Wrap"
-                Cursor="Hand"/>
+            <!--<Path
+                Data="{StaticResource Copy}"
+                Fill="#a6a6a6"
+                Stretch="Uniform"
+                Width="15"
+                Height="15"
+                Margin="250,100,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                PreviewMouseLeftButtonUp="PrivateKeyTextBox_PreviewMouseDown"
+                Cursor="Hand"/>-->
 
             <TextBox
                 x:Name="PrivateKeyTextBox"
@@ -91,6 +101,17 @@
                 Height="200"
                 Background="White"
                 Margin="-400,0,0,0"
+                IsReadOnly="True"
+                TextWrapping="Wrap"
+                PreviewMouseLeftButtonUp="CopyPrivateKey"
+                Cursor="Hand"/>
+
+            <TextBox
+                x:Name="PublicKeyTextBox"
+                Width="200"
+                Height="200"
+                Background="White"
+                Margin="400,0,0,0"
                 IsReadOnly="True"
                 TextWrapping="Wrap"
                 Cursor="Hand"/>

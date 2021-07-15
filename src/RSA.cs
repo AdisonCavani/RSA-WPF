@@ -25,19 +25,13 @@ namespace RSA
             }
         }
 
-        private RSAParameters _privateKey;
-        private RSAParameters _publicKey;
-
-        public string Encrypt(string plainText)
+        public string Encrypt(string plainText, string publicKey)
         {
             using (var csp = new RSACryptoServiceProvider(keyValue))
             {
                 try
                 {
-                    _privateKey = csp.ExportParameters(true);
-                    _publicKey = csp.ExportParameters(false);
-
-                    csp.ImportParameters(_publicKey);
+                    csp.ImportFromPem(publicKey.ToCharArray());
 
                     var data = Encoding.Unicode.GetBytes(plainText);
                     var cypher = csp.Encrypt(data, false);
@@ -51,17 +45,15 @@ namespace RSA
             }
         }
 
-        public string Decrypt(string cypherText)
+        public string Decrypt(string cypherText, string privateKey)
         {
             using (var csp = new RSACryptoServiceProvider(keyValue))
             {
                 try
                 {
-                    _privateKey = csp.ExportParameters(true);
-                    _publicKey = csp.ExportParameters(false);
+                    csp.ImportFromPem(privateKey.ToCharArray());
 
                     var dataBytes = Convert.FromBase64String(cypherText);
-                    csp.ImportParameters(_privateKey);
                     var plainText = csp.Decrypt(dataBytes, false);
 
                     return Encoding.Unicode.GetString(plainText);
