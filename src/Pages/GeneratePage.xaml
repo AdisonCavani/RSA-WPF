@@ -13,7 +13,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/res/icons.xaml"/>
+                <ResourceDictionary Source="/Resources/icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -43,7 +43,7 @@
                     Style="{StaticResource NormalText}"/>
 
                     <Image
-                        Source="/assets/generate.png"
+                        Source="/Assets/generate.png"
                         Margin="540,0,0,0"/>
                 </Grid>
             </Border>

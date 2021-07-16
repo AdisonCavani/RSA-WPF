@@ -10,6 +10,14 @@
       Title="SettingsPage"
       Background="#121416">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -35,7 +43,7 @@
                     Style="{StaticResource NormalText}"/>
 
                     <Image
-                        Source="/assets/encrypt.png"
+                        Source="/Assets/encrypt.png"
                         Margin="520,0,0,0"/>
                 </Grid>
             </Border>
