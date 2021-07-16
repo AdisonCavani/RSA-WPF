@@ -8,20 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="assets\decrypt.svg" />
-    <None Remove="assets\decrypt_illustration.png" />
-    <None Remove="assets\encrypt.png" />
-    <None Remove="assets\encrypt.svg" />
-    <None Remove="assets\generate.png" />
-    <None Remove="assets\generate.svg" />
-    <None Remove="assets\morestorage.png" />
-    <None Remove="assets\profile1.jpg" />
-    <None Remove="assets\settings.svg" />
+    <None Remove="Assets\decrypt.svg" />
+    <None Remove="Assets\decrypt_illustration.png" />
+    <None Remove="Assets\encrypt.png" />
+    <None Remove="Assets\encrypt.svg" />
+    <None Remove="Assets\generate.png" />
+    <None Remove="Assets\generate.svg" />
+    <None Remove="Assets\morestorage.png" />
+    <None Remove="Assets\profile1.jpg" />
+    <None Remove="Assets\settings.svg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="assets\encrypt.png" />
-    <Resource Include="assets\generate.png" />
+    <Resource Include="Assets\encrypt.png" />
+    <Resource Include="Assets\generate.png" />
   </ItemGroup>
 
 </Project>

@@ -52,17 +52,62 @@
             Grid.Row="1"
             Background="#121416">
 
-            <TextBlock
-                    Margin="550,100,0,0"
-                    Text="Public key"
-                    Style="{StaticResource NormalText}"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock
-                    Margin="150,100,0,0"
-                    Text="Private key"
-                    Style="{StaticResource NormalText}"/>
+            <Grid
+                Grid.Column="0"
+                Margin="40,20,20,30">
+                <Border
+                    CornerRadius="7"
+                    Background="#1b1d1f">
+                    <Grid>
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            Text="Private key"
+                            Style="{StaticResource NormalText}"/>
+                        
+                        <TextBox
+                            x:Name="PrivateKeyTextBox"
+                            Width="200"
+                            Height="200"
+                            Background="White"
+                            Margin="0,0,0,0"
+                            IsReadOnly="True"
+                            PreviewMouseLeftButtonUp="CopyPrivateKey"
+                            Cursor="Hand"/>
+                    </Grid>
+                </Border>
+            </Grid>
 
-            <ComboBox
+            <Grid
+                Grid.Column="1"
+                Margin="40,20,20,30">
+                <Border
+                    CornerRadius="7"
+                    Background="#1b1d1f">
+                    <Grid>
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            Text="Public key"
+                            Style="{StaticResource NormalText}"/>
+                        
+                        <TextBox
+                            x:Name="PublicKeyTextBox"
+                            Width="200"
+                            Height="200"
+                            Background="White"
+                            Margin="0,0,0,0"
+                            TextWrapping="Wrap"
+                            PreviewMouseLeftButtonUp="CopyPublicKey"
+                            Cursor="Hand"/>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <!--<ComboBox
                 x:Name="KeySize"
                 Width="100"
                 Height="20"
@@ -79,42 +124,21 @@
                 Width="90"
                 Height="30"
                 Content="Generate"
-                Margin="0, 100, 0, 0"
+                Margin="0,0,0,0"
                 Click="GenerateButton_Click"
-                Style="{StaticResource PrimaryButton}"/>
+                Style="{StaticResource PrimaryButton}"/>-->
 
             <!--<Path
-                Data="{StaticResource Copy}"
-                Fill="#a6a6a6"
-                Stretch="Uniform"
-                Width="15"
-                Height="15"
-                Margin="250,100,0,0"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                PreviewMouseLeftButtonUp="PrivateKeyTextBox_PreviewMouseDown"
-                Cursor="Hand"/>-->
-
-            <TextBox
-                x:Name="PrivateKeyTextBox"
-                Width="200"
-                Height="200"
-                Background="White"
-                Margin="-400,0,0,0"
-                IsReadOnly="True"
-                TextWrapping="Wrap"
-                PreviewMouseLeftButtonUp="CopyPrivateKey"
-                Cursor="Hand"/>
-
-            <TextBox
-                x:Name="PublicKeyTextBox"
-                Width="200"
-                Height="200"
-                Background="White"
-                Margin="400,0,0,0"
-                IsReadOnly="True"
-                TextWrapping="Wrap"
-                Cursor="Hand"/>
+                    Data="{StaticResource Copy}"
+                    Fill="#a6a6a6"
+                    Stretch="Uniform"
+                    Width="15"
+                    Height="15"
+                    Margin="0,0,0,0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    PreviewMouseLeftButtonUp="PrivateKeyTextBox_PreviewMouseDown"
+                    Cursor="Hand"/>-->
         </Grid>
     </Grid>
 </Page>
