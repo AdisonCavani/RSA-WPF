@@ -25,10 +25,10 @@
         </Grid.RowDefinitions>
 
         <Grid
-            Grid.Row="0">
+            Grid.Row="0"
+            Width="692"
+            Height="85">
             <Border
-                Width="692"
-                Height="85"
                 CornerRadius="7"
                 Background="#1b1d1f">
                 <Grid>
@@ -50,95 +50,94 @@
         </Grid>
         <Grid
             Grid.Row="1"
-            Background="#121416">
+            Width="692"
+            Height="470">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <Border
+                CornerRadius="7"
+                Background="#1b1d1f">
+                <Grid>
+                    <!--#region Private key-->
+                    <TextBlock
+                        Margin="0,0,0,0"
+                        Text="Private key"
+                        Style="{StaticResource NormalText}"/>
 
-            <Grid
-                Grid.Column="0"
-                Margin="40,20,20,30">
-                <Border
-                    CornerRadius="7"
-                    Background="#1b1d1f">
-                    <Grid>
-                        <TextBlock
-                            Margin="0,0,0,0"
-                            Text="Private key"
-                            Style="{StaticResource NormalText}"/>
-                        
-                        <TextBox
-                            x:Name="PrivateKeyTextBox"
-                            Width="200"
-                            Height="200"
-                            Background="White"
-                            Margin="0,0,0,0"
-                            IsReadOnly="True"
-                            PreviewMouseLeftButtonUp="CopyPrivateKey"
-                            Cursor="Hand"/>
-                    </Grid>
-                </Border>
-            </Grid>
+                    <TextBox
+                        x:Name="PrivateKeyTextBox"
+                        Width="200"
+                        Height="200"
+                        Background="White"
+                        Margin="-500,0,0,0"
+                        TextWrapping="Wrap"
+                        IsReadOnly="True"
+                        Cursor="Hand"/>
 
-            <Grid
-                Grid.Column="1"
-                Margin="40,20,20,30">
-                <Border
-                    CornerRadius="7"
-                    Background="#1b1d1f">
-                    <Grid>
-                        <TextBlock
-                            Margin="0,0,0,0"
-                            Text="Public key"
-                            Style="{StaticResource NormalText}"/>
-                        
-                        <TextBox
-                            x:Name="PublicKeyTextBox"
-                            Width="200"
-                            Height="200"
-                            Background="White"
-                            Margin="0,0,0,0"
-                            TextWrapping="Wrap"
-                            PreviewMouseLeftButtonUp="CopyPublicKey"
-                            Cursor="Hand"/>
-                    </Grid>
-                </Border>
-            </Grid>
+                    <Path
+                        Data="{StaticResource Copy}"
+                        Fill="#a6a6a6"
+                        Stretch="Uniform"
+                        Width="15"
+                        Height="15"
+                        Margin="100,50,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        PreviewMouseLeftButtonUp="CopyPrivateKey"
+                        Cursor="Hand"/>
+                    <!--#endregion-->
 
-            <!--<ComboBox
-                x:Name="KeySize"
-                Width="100"
-                Height="20"
-                SelectionChanged="KeySize_SelectionChanged">
-                <ComboBoxItem>512 bit</ComboBoxItem>
-                <ComboBoxItem>1024 bit</ComboBoxItem>
-                <ComboBoxItem>2048 bit</ComboBoxItem>
-                <ComboBoxItem>3072 bit</ComboBoxItem>
-                <ComboBoxItem>4096 bit</ComboBoxItem>
-            </ComboBox>
+                    <!--#region Public key-->
+                    <TextBlock
+                        Margin="0,0,0,0"
+                        Text="Public key"
+                        Style="{StaticResource NormalText}"/>
 
-            <Button
-                x:Name="GenerateButton"
-                Width="90"
-                Height="30"
-                Content="Generate"
-                Margin="0,0,0,0"
-                Click="GenerateButton_Click"
-                Style="{StaticResource PrimaryButton}"/>-->
+                    <TextBox
+                        x:Name="PublicKeyTextBox"
+                        Width="200"
+                        Height="200"
+                        Background="White"
+                        Margin="0,0,0,0"
+                        TextWrapping="Wrap"
+                        IsReadOnly="True"
+                        Cursor="Hand"/>
 
-            <!--<Path
-                    Data="{StaticResource Copy}"
-                    Fill="#a6a6a6"
-                    Stretch="Uniform"
-                    Width="15"
-                    Height="15"
-                    Margin="0,0,0,0"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left"
-                    PreviewMouseLeftButtonUp="PrivateKeyTextBox_PreviewMouseDown"
-                    Cursor="Hand"/>-->
+                    <Path
+                        Data="{StaticResource Copy}"
+                        Fill="#a6a6a6"
+                        Stretch="Uniform"
+                        Width="15"
+                        Height="15"
+                        Margin="350,50,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        PreviewMouseLeftButtonUp="CopyPublicKey"
+                        Cursor="Hand"/>
+                    <!--#endregion-->
+
+                    <ComboBox
+                        x:Name="KeySize"
+                        Width="100"
+                        Height="20"
+                        Margin="550,0,0,0"
+                        SelectionChanged="KeySize_SelectionChanged">
+                        <ComboBoxItem>512 bit</ComboBoxItem>
+                        <ComboBoxItem>1024 bit</ComboBoxItem>
+                        <ComboBoxItem>2048 bit</ComboBoxItem>
+                        <ComboBoxItem>3072 bit</ComboBoxItem>
+                        <ComboBoxItem>4096 bit</ComboBoxItem>
+                    </ComboBox>
+
+                    <Button
+                        x:Name="GenerateButton"
+                        Width="90"
+                        Height="30"
+                        Content="Generate"
+                        Margin="300,0,0,0"
+                        Click="GenerateButton_Click"
+                        Style="{StaticResource PrimaryButton}"/>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>

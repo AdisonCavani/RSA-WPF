@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace RSA_WPF
 {
@@ -49,21 +50,49 @@ namespace RSA_WPF
 
         private async void CopyPrivateKey(object sender, MouseButtonEventArgs e)
         {
-            Clipboard.SetText(PrivateKeyTextBox.Text);
+            string privateKey = PrivateKeyTextBox.Text;
+            Clipboard.SetText(privateKey);
+
+            // Show toast notification
+            new ToastContentBuilder()
+                .AddArgument("action", "viewConversation")
+                .AddArgument("conversationId", 9813)
+                .AddText("Private key was copied to clipboard")
+                .AddText("Clipboard will automaticaly clear in 15 seconds!")
+                .Show();
+
             if (true)
             {
                 await Task.Delay(15000);
-                Clipboard.Clear();
+                if (Clipboard.GetText() == privateKey)
+                {
+                    Clipboard.Clear();
+                    privateKey = string.Empty;
+                }
             }
         }
 
         private async void CopyPublicKey(object sender, MouseButtonEventArgs e)
         {
-            Clipboard.SetText(PublicKeyTextBox.Text);
+            string publicKey = PublicKeyTextBox.Text;
+            Clipboard.SetText(publicKey);
+
+            // Show toast notification
+            new ToastContentBuilder()
+                .AddArgument("action", "viewConversation")
+                .AddArgument("conversationId", 9813)
+                .AddText("Public key was copied to clipboard")
+                .AddText("Clipboard will automaticaly clear in 15 seconds!")
+                .Show();
+
             if (true)
             {
                 await Task.Delay(15000);
-                Clipboard.Clear();
+                if (Clipboard.GetText() == publicKey)
+                {
+                    Clipboard.Clear();
+                    publicKey = string.Empty;
+                }
             }
         }
     }
