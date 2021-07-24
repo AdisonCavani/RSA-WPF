@@ -27,6 +27,7 @@ namespace RSA_WPF
         {
             InitializeComponent();
             KeySize.SelectedIndex = 2; // Default key lenght - 2048
+            GenerateButton_Click(new object(), new RoutedEventArgs()); // Generate key pair
         }
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)

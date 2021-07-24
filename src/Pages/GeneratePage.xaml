@@ -14,6 +14,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/icons.xaml"/>
+                <ResourceDictionary Source="/CustomControls/Scrollbar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -57,21 +58,16 @@
                 CornerRadius="7"
                 Background="#1b1d1f">
                 <Grid>
+                    <TextBlock
+                        Margin="30,20,0,0"
+                        Text="Select key size"
+                        Style="{StaticResource MainText2}"/>
+
                     <!--#region Private key-->
                     <TextBlock
-                        Margin="0,0,0,0"
+                        Margin="30,130,0,0"
                         Text="Private key"
-                        Style="{StaticResource NormalText}"/>
-
-                    <TextBox
-                        x:Name="PrivateKeyTextBox"
-                        Width="200"
-                        Height="200"
-                        Background="White"
-                        Margin="-500,0,0,0"
-                        TextWrapping="Wrap"
-                        IsReadOnly="True"
-                        Cursor="Hand"/>
+                        Style="{StaticResource MainText2}"/>
 
                     <Path
                         Data="{StaticResource Copy}"
@@ -79,28 +75,35 @@
                         Stretch="Uniform"
                         Width="15"
                         Height="15"
-                        Margin="100,50,0,0"
+                        Margin="155,140,0,0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
                         PreviewMouseLeftButtonUp="CopyPrivateKey"
                         Cursor="Hand"/>
+
+                    <TextBox
+                        x:Name="PrivateKeyTextBox"
+                        Width="285"
+                        Height="275"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Foreground="#9B9B9B"
+                        SelectionBrush="Transparent"
+                        BorderThickness="0"
+                        Margin="28,170,0,0"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                        ContextMenu="{x:Null}"
+                        IsReadOnly="True"
+                        Cursor="Arrow"/>
                     <!--#endregion-->
 
                     <!--#region Public key-->
                     <TextBlock
-                        Margin="0,0,0,0"
+                        Margin="355,130,0,0"
                         Text="Public key"
-                        Style="{StaticResource NormalText}"/>
-
-                    <TextBox
-                        x:Name="PublicKeyTextBox"
-                        Width="200"
-                        Height="200"
-                        Background="White"
-                        Margin="0,0,0,0"
-                        TextWrapping="Wrap"
-                        IsReadOnly="True"
-                        Cursor="Hand"/>
+                        Style="{StaticResource MainText2}"/>
 
                     <Path
                         Data="{StaticResource Copy}"
@@ -108,18 +111,38 @@
                         Stretch="Uniform"
                         Width="15"
                         Height="15"
-                        Margin="350,50,0,0"
+                        Margin="473,140,0,0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
                         PreviewMouseLeftButtonUp="CopyPublicKey"
                         Cursor="Hand"/>
+
+                    <TextBox
+                        x:Name="PublicKeyTextBox"
+                        Width="285"
+                        Height="275"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Foreground="#9B9B9B"
+                        SelectionBrush="Transparent"
+                        BorderThickness="0"
+                        Margin="353,170,0,0"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                        ContextMenu="{x:Null}"
+                        IsReadOnly="True"
+                        Cursor="Arrow"/>
                     <!--#endregion-->
 
                     <ComboBox
                         x:Name="KeySize"
                         Width="100"
-                        Height="20"
-                        Margin="550,0,0,0"
+                        Height="30"
+                        Margin="30,72,0,0"
+                        Background="Transparent"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
                         SelectionChanged="KeySize_SelectionChanged">
                         <ComboBoxItem>512 bit</ComboBoxItem>
                         <ComboBoxItem>1024 bit</ComboBoxItem>
@@ -130,12 +153,16 @@
 
                     <Button
                         x:Name="GenerateButton"
-                        Width="90"
+                        Width="100"
                         Height="30"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
                         Content="Generate"
-                        Margin="300,0,0,0"
+                        Margin="163,72,0,0"
                         Click="GenerateButton_Click"
                         Style="{StaticResource PrimaryButton}"/>
+                    
+                    
                 </Grid>
             </Border>
         </Grid>
