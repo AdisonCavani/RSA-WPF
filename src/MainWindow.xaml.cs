@@ -27,45 +27,45 @@ namespace RSA_WPF
             this.DataContext = this;
 
             // Loading bindings
-            ProfileName = Environment.UserName;
-            GetProfileImage();
+            //ProfileName = Environment.UserName;
+            //GetProfileImage();
 
             // Loading default page
             Main.Content = new EncryptPage();
         }
 
-        private string profileName;
-        public string ProfileName
-        {
-            get { return profileName; }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    profileName = value;
-                }
-            }
-        }
+        //private string profileName;
+        //public string ProfileName
+        //{
+        //    get { return profileName; }
+        //    set
+        //    {
+        //        if (!string.IsNullOrEmpty(value))
+        //        {
+        //            profileName = value;
+        //        }
+        //    }
+        //}
 
-        private string profileImage;
+        //private string profileImage;
 
-        public string ProfileImage
-        {
-            get { return profileImage; }
-            set { profileImage = value; }
-        }
+        //public string ProfileImage
+        //{
+        //    get { return profileImage; }
+        //    set { profileImage = value; }
+        //}
 
-        private void GetProfileImage()
-        {
-            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Temp\" + Environment.UserName + ".bmp"))
-            {
-                ProfileImage = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Temp\" + Environment.UserName + ".bmp";
-            }
-            else
-            {
-                ProfileImage = "\\assets\\profile1.jpg";
-            }
-        }
+        //private void GetProfileImage()
+        //{
+        //    if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Temp\" + Environment.UserName + ".bmp"))
+        //    {
+        //        ProfileImage = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Temp\" + Environment.UserName + ".bmp";
+        //    }
+        //    else
+        //    {
+        //        ProfileImage = "\\assets\\profile1.jpg";
+        //    }
+        //}
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {

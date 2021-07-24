@@ -137,32 +137,44 @@
 
                     <ComboBox
                         x:Name="KeySize"
+                        Style="{StaticResource ComboBoxFlatStyle}"
                         Width="100"
-                        Height="30"
                         Margin="30,72,0,0"
-                        Background="Transparent"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
                         SelectionChanged="KeySize_SelectionChanged">
-                        <ComboBoxItem>512 bit</ComboBoxItem>
-                        <ComboBoxItem>1024 bit</ComboBoxItem>
-                        <ComboBoxItem>2048 bit</ComboBoxItem>
-                        <ComboBoxItem>3072 bit</ComboBoxItem>
-                        <ComboBoxItem>4096 bit</ComboBoxItem>
+                        <ComboBoxItem
+                            x:Name="A"
+                            Content="512 bit"
+                            Visibility="{Binding VisibilityA}"/>
+                        <ComboBoxItem
+                            x:Name="B"
+                            Content="1024 bit"
+                            Visibility="{Binding VisibilityB}"/>
+                        <ComboBoxItem
+                            x:Name="C"
+                            Content="2048 bit"
+                            Visibility="{Binding VisibilityC}"/>
+                        <ComboBoxItem
+                            x:Name="D"
+                            Content="3072 bit"
+                            Visibility="{Binding VisibilityD}"/>
+                        <ComboBoxItem
+                            x:Name="E"
+                            Content="4096 bit"
+                            Visibility="{Binding VisibilityE}"/>
                     </ComboBox>
 
                     <Button
                         x:Name="GenerateButton"
-                        Width="100"
-                        Height="30"
+                        Width="90"
+                        Height="24"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Generate"
-                        Margin="163,72,0,0"
+                        Margin="163,71,0,0"
                         Click="GenerateButton_Click"
                         Style="{StaticResource PrimaryButton}"/>
-                    
-                    
                 </Grid>
             </Border>
         </Grid>

@@ -39,6 +39,8 @@ namespace RSA_WPF
 
         private void KeySize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            CollapseSelectedItem();
+
             var item = (ComboBoxItem)KeySize.SelectedValue;
             string keySize = (string)item.Content;
 
@@ -94,6 +96,54 @@ namespace RSA_WPF
                     Clipboard.Clear();
                     publicKey = string.Empty;
                 }
+            }
+        }
+
+        private void CollapseSelectedItem()
+        {
+            if (A.IsSelected == true)
+            {
+                A.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                A.Visibility = Visibility.Visible;
+            }
+
+            if (B.IsSelected == true)
+            {
+                B.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                B.Visibility = Visibility.Visible;
+            }
+
+            if (C.IsSelected == true)
+            {
+                C.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                C.Visibility = Visibility.Visible;
+            }
+
+            if (D.IsSelected == true)
+            {
+                D.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                D.Visibility = Visibility.Visible;
+            }
+
+            if (E.IsSelected == true)
+            {
+                E.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                E.Visibility = Visibility.Visible;
             }
         }
     }
