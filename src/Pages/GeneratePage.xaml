@@ -69,17 +69,22 @@
                         Text="Private key"
                         Style="{StaticResource MainText2}"/>
 
-                    <Path
-                        Data="{StaticResource Copy}"
-                        Fill="#a6a6a6"
-                        Stretch="Uniform"
-                        Width="15"
-                        Height="15"
-                        Margin="155,140,0,0"
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="150,137,0,0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
-                        PreviewMouseLeftButtonUp="CopyPrivateKey"
-                        Cursor="Hand"/>
+                        Click="CopyPrivateKey"
+                        Cursor="Hand"
+                        Style="{StaticResource CopyButton}">
+                        <Path
+                            Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
 
                     <TextBox
                         x:Name="PrivateKeyTextBox"
@@ -105,17 +110,22 @@
                         Text="Public key"
                         Style="{StaticResource MainText2}"/>
 
-                    <Path
-                        Data="{StaticResource Copy}"
-                        Fill="#a6a6a6"
-                        Stretch="Uniform"
-                        Width="15"
-                        Height="15"
-                        Margin="473,140,0,0"
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="466,137,0,0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
-                        PreviewMouseLeftButtonUp="CopyPublicKey"
-                        Cursor="Hand"/>
+                        Click="CopyPublicKey"
+                        Cursor="Hand"
+                        Style="{StaticResource CopyButton}">
+                        <Path
+                            Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
 
                     <TextBox
                         x:Name="PublicKeyTextBox"

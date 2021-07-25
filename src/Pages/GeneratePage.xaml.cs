@@ -30,9 +30,9 @@ namespace RSA_WPF
             GenerateButton_Click(new object(), new RoutedEventArgs()); // Generate key pair
         }
 
-        private void GenerateButton_Click(object sender, RoutedEventArgs e)
+        private async void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-            var keyPair = RsaEncryption.GenerateKeyPair();
+            var keyPair = await Task.Run(() => RsaEncryption.GenerateKeyPair());
             PrivateKeyTextBox.Text = keyPair.Item1;
             PublicKeyTextBox.Text = keyPair.Item2;
         }
@@ -51,7 +51,7 @@ namespace RSA_WPF
             RsaEncryption.KeyValue = int.Parse(keySize);
         }
 
-        private async void CopyPrivateKey(object sender, MouseButtonEventArgs e)
+        private async void CopyPrivateKey(object sender, RoutedEventArgs e)
         {
             string privateKey = PrivateKeyTextBox.Text;
             Clipboard.SetText(privateKey);
@@ -75,7 +75,7 @@ namespace RSA_WPF
             }
         }
 
-        private async void CopyPublicKey(object sender, MouseButtonEventArgs e)
+        private async void CopyPublicKey(object sender, RoutedEventArgs e)
         {
             string publicKey = PublicKeyTextBox.Text;
             Clipboard.SetText(publicKey);
