@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Toolkit.Uwp.Notifications;
 using System.Security.Cryptography.X509Certificates;
+using RSA_WPF.Properties;
 
 namespace RSA_WPF
 {
@@ -65,12 +66,12 @@ namespace RSA_WPF
                     .AddArgument("action", "viewConversation")
                     .AddArgument("conversationId", 9813)
                     .AddText("Private key was copied to clipboard")
-                    .AddText("Clipboard will automaticaly clear in 15 seconds!")
+                    .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
                     .Show();
 
-                if (true)
+                if ((bool)Settings.Default["ClearClipboard"] == true)
                 {
-                    await Task.Delay(15000);
+                    await Task.Delay((byte)Settings.Default["ClearClipboardTime"] * 1000); // Convert sec to ms
                     if (Clipboard.GetText() == privateKey)
                     {
                         Clipboard.Clear();
@@ -93,12 +94,12 @@ namespace RSA_WPF
                     .AddArgument("action", "viewConversation")
                     .AddArgument("conversationId", 9813)
                     .AddText("Public key was copied to clipboard")
-                    .AddText("Clipboard will automaticaly clear in 15 seconds!")
+                    .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
                     .Show();
 
-                if (true)
+                if ((bool)Settings.Default["ClearClipboard"] == true)
                 {
-                    await Task.Delay(15000);
+                    await Task.Delay((byte)Settings.Default["ClearClipboardTime"] * 1000); // Convert sec to ms
                     if (Clipboard.GetText() == publicKey)
                     {
                         Clipboard.Clear();
