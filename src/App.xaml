@@ -96,7 +96,7 @@
         </Style>
         
         <!--Copy button-->
-        <Style x:Key="CopyButton" TargetType="{x:Type Button}">
+        <Style x:Key="FunctionButton" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#333536"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">

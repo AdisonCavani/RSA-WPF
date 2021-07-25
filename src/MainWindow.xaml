@@ -68,19 +68,19 @@
                     IsSelected="True"
                     Text="Encrypt" 
                     GroupName="MenuButton"
-                    PreviewMouseDown="EncryptButton_Click"/>
+                    PreviewMouseLeftButtonUp="EncryptButton_Click"/>
                 <customcontrols:MenuButton
                     Padding="0,0,0,0"
                     Icon="{StaticResource Visibility}"
                     Text="Decrypt" 
                     GroupName="MenuButton"
-                    PreviewMouseDown="DecryptButton_Click"/>
+                    PreviewMouseLeftButtonUp="DecryptButton_Click"/>
                 <customcontrols:MenuButton
                     Padding="0,0,0,0"
                     Icon="{StaticResource Code}"
                     Text="Generate" 
                     GroupName="MenuButton"
-                    PreviewMouseDown="GenerateButton_Click"/>
+                    PreviewMouseLeftButtonUp="GenerateButton_Click"/>
             </StackPanel>
             <customcontrols:MenuButton
                 DockPanel.Dock="Bottom"
@@ -89,7 +89,7 @@
                 Icon="{StaticResource Settings}"
                 Text="Settings" 
                 GroupName="MenuButton"
-                PreviewMouseDown="SettingsButton_Click"/>
+                PreviewMouseLeftButtonUp="SettingsButton_Click"/>
             <!--#endregion-->
         </Grid>
 

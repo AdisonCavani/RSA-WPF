@@ -77,9 +77,25 @@
                         HorizontalAlignment="Left"
                         Click="CopyPrivateKey"
                         Cursor="Hand"
-                        Style="{StaticResource CopyButton}">
+                        Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="180,137,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="ClearPrivateKey"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Clear}"
                             Fill="#a6a6a6"
                             Stretch="Uniform"
                             Width="12"
@@ -118,9 +134,25 @@
                         HorizontalAlignment="Left"
                         Click="CopyPublicKey"
                         Cursor="Hand"
-                        Style="{StaticResource CopyButton}">
+                        Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="496,137,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="ClearPublicKey"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Clear}"
                             Fill="#a6a6a6"
                             Stretch="Uniform"
                             Width="12"

@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Toolkit.Uwp.Notifications;
+using System.Security.Cryptography.X509Certificates;
 
 namespace RSA_WPF
 {
@@ -54,23 +55,27 @@ namespace RSA_WPF
         private async void CopyPrivateKey(object sender, RoutedEventArgs e)
         {
             string privateKey = PrivateKeyTextBox.Text;
-            Clipboard.SetText(privateKey);
 
-            // Show toast notification
-            new ToastContentBuilder()
-                .AddArgument("action", "viewConversation")
-                .AddArgument("conversationId", 9813)
-                .AddText("Private key was copied to clipboard")
-                .AddText("Clipboard will automaticaly clear in 15 seconds!")
-                .Show();
-
-            if (true)
+            if (!string.IsNullOrEmpty(privateKey))
             {
-                await Task.Delay(15000);
-                if (Clipboard.GetText() == privateKey)
+                Clipboard.SetText(privateKey);
+
+                // Show toast notification
+                new ToastContentBuilder()
+                    .AddArgument("action", "viewConversation")
+                    .AddArgument("conversationId", 9813)
+                    .AddText("Private key was copied to clipboard")
+                    .AddText("Clipboard will automaticaly clear in 15 seconds!")
+                    .Show();
+
+                if (true)
                 {
-                    Clipboard.Clear();
-                    privateKey = string.Empty;
+                    await Task.Delay(15000);
+                    if (Clipboard.GetText() == privateKey)
+                    {
+                        Clipboard.Clear();
+                        privateKey = string.Empty;
+                    }
                 }
             }
         }
@@ -78,24 +83,52 @@ namespace RSA_WPF
         private async void CopyPublicKey(object sender, RoutedEventArgs e)
         {
             string publicKey = PublicKeyTextBox.Text;
-            Clipboard.SetText(publicKey);
 
-            // Show toast notification
-            new ToastContentBuilder()
-                .AddArgument("action", "viewConversation")
-                .AddArgument("conversationId", 9813)
-                .AddText("Public key was copied to clipboard")
-                .AddText("Clipboard will automaticaly clear in 15 seconds!")
-                .Show();
-
-            if (true)
+            if (!string.IsNullOrEmpty(publicKey))
             {
-                await Task.Delay(15000);
-                if (Clipboard.GetText() == publicKey)
+                Clipboard.SetText(publicKey);
+
+                // Show toast notification
+                new ToastContentBuilder()
+                    .AddArgument("action", "viewConversation")
+                    .AddArgument("conversationId", 9813)
+                    .AddText("Public key was copied to clipboard")
+                    .AddText("Clipboard will automaticaly clear in 15 seconds!")
+                    .Show();
+
+                if (true)
                 {
-                    Clipboard.Clear();
-                    publicKey = string.Empty;
+                    await Task.Delay(15000);
+                    if (Clipboard.GetText() == publicKey)
+                    {
+                        Clipboard.Clear();
+                        publicKey = string.Empty;
+                    }
                 }
+            }
+        }
+
+        private void ClearPrivateKey(object sender, RoutedEventArgs e)
+        {
+            string privateKey = PrivateKeyTextBox.Text;
+            PrivateKeyTextBox.Text = string.Empty;
+
+            if (Clipboard.GetText() == privateKey)
+            {
+                Clipboard.Clear();
+                privateKey = string.Empty;
+            }
+        }
+
+        private void ClearPublicKey(object sender, RoutedEventArgs e)
+        {
+            string publicKey = PublicKeyTextBox.Text;
+            PublicKeyTextBox.Text = string.Empty;
+
+            if (Clipboard.GetText() == publicKey)
+            {
+                Clipboard.Clear();
+                publicKey = string.Empty;
             }
         }
 
