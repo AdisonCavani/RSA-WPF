@@ -18,9 +18,9 @@
 
             <Setter Property="Foreground" Value="#b8b8ba"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="FontFamily" Value="Museo Sans 700"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Seoge UI"/>
             <Setter Property="Margin" Value="11, 0, 0, 0"/>
 
             <!--Change foreground on MouseOver and Menu item Selection-->

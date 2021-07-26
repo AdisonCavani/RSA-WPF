@@ -14,6 +14,8 @@ using RSA;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.Toolkit.Uwp.Notifications;
+using RSA_WPF.Properties;
 
 namespace RSA_WPF
 {
@@ -36,7 +38,51 @@ namespace RSA_WPF
             {
                 var output = RsaEncryption.Encrypt(plainText, publicKey);
 
-                CypherTextBox.Text = output;
+                CipherTextBox.Text = output;
+            }
+        }
+
+        private void PastePublicKey(object sender, RoutedEventArgs e)
+        {
+            PublicKey.Text = Clipboard.GetText();
+        }
+
+        private void PastePlainText(object sender, RoutedEventArgs e)
+        {
+            PlainTextBox.Text += Clipboard.GetText();
+        }
+
+        private void ClearPlainText(object sender, RoutedEventArgs e)
+        {
+            string plainText = PlainTextBox.Text;
+            PlainTextBox.Text = string.Empty;
+
+            if (Clipboard.GetText() == plainText)
+            {
+                Clipboard.Clear();
+                plainText = string.Empty;
+            }
+        }
+
+        private void ClearCipher(object sender, RoutedEventArgs e)
+        {
+            string cipher = CipherTextBox.Text;
+            CipherTextBox.Text = string.Empty;
+
+            if (Clipboard.GetText() == cipher)
+            {
+                Clipboard.Clear();
+                cipher = string.Empty;
+            }
+        }
+
+        private void CopyCipher(object sender, RoutedEventArgs e)
+        {
+            string cipher = CipherTextBox.Text;
+
+            if (!string.IsNullOrEmpty(cipher))
+            {
+                Clipboard.SetText(cipher);
             }
         }
     }

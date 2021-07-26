@@ -7,13 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="610"
       d:DesignWidth="772"
-      Title="SettingsPage"
+      Title="Encrypt Page"
       Background="#121416">
 
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/icons.xaml"/>
+                <ResourceDictionary Source="/CustomControls/Scrollbar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -25,10 +26,10 @@
         </Grid.RowDefinitions>
 
         <Grid
-            Grid.Row="0">
+            Grid.Row="0"
+            Width="692"
+            Height="85">
             <Border
-                Width="692"
-                Height="85"
                 CornerRadius="7"
                 Background="#1b1d1f">
                 <Grid>
@@ -45,43 +46,186 @@
                     <Image
                         Source="/Assets/encrypt.png"
                         Margin="520,0,0,0"/>
-
                 </Grid>
             </Border>
         </Grid>
         <Grid
-            Grid.Row="1">
+            Grid.Row="1"
+            Width="692"
+            Height="460"
+            Margin="0,15,0,0"
+            VerticalAlignment="Top">
 
-            <TextBox
-                x:Name="PublicKey"
-                Width="200"
-                Height="250"
-                TextWrapping="Wrap"
-                Margin="-550,0,0,0"/>
+            <Border
+                CornerRadius="7"
+                Background="#1b1d1f">
+                <Grid>
+                    <TextBlock
+                        Margin="30,20,0,0"
+                        Text="Public Key"
+                        Style="{StaticResource MainText2}"/>
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="141,25,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="PastePublicKey"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Paste}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
 
-            <TextBox
-                x:Name="PlainTextBox"
-                Width="200"
-                Height="250"
-                TextWrapping="Wrap"
-                Margin="-100,0,0,0"/>
+                    <!--#region Private key-->
+                    <TextBlock
+                        Margin="30,130,0,0"
+                        Text="Plain text"
+                        Style="{StaticResource MainText2}"/>
 
-            <TextBox
-                x:Name="CypherTextBox"
-                Width="200"
-                Height="250"
-                TextWrapping="Wrap"
-                Margin="350,0,0,0"/>
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="131,137,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="PastePlainText"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Paste}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="161,137,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="ClearPlainText"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Clear}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
 
-            <Button
-                x:Name="EncryptButton"
-                Width="90"
-                Height="30"
-                Content="Encrypt"
-                Margin="0, -400, 0, 0"
-                Click="EncryptButton_Click"
-                Style="{StaticResource PrimaryButton}"/>
+                    <TextBox
+                        x:Name="PlainTextBox"
+                        Width="285"
+                        Height="275"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Foreground="#9B9B9B"
+                        BorderThickness="1"
+                        BorderBrush="#9B9B9B"
+                        Margin="28,170,0,0"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                        ContextMenu="{x:Null}"
+                        IsReadOnly="False"
+                        AcceptsReturn="True"
+                        AcceptsTab="True"
+                        Cursor="IBeam"/>
+                    <!--#endregion-->
 
+                    <!--#region Public key-->
+                    <TextBlock
+                        Margin="355,130,0,0"
+                        Text="Cipher"
+                        Style="{StaticResource MainText2}"/>
+
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="431,137,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="CopyCipher"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+                    <Button
+                        Width="22"
+                        Height="22"
+                        Margin="461,137,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Click="ClearCipher"
+                        Cursor="Hand"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Clear}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+
+                    <TextBox
+                        x:Name="CipherTextBox"
+                        Width="285"
+                        Height="275"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Foreground="#9B9B9B"
+                        SelectionBrush="Transparent"
+                        BorderThickness="0"
+                        Margin="353,170,0,0"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                        ContextMenu="{x:Null}"
+                        IsReadOnly="True"
+                        Cursor="Arrow"/>
+                    <!--#endregion-->
+
+                    <TextBox
+                        x:Name="PublicKey"
+                        Width="285"
+                        Height="22"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Foreground="#9B9B9B"
+                        BorderThickness="1"
+                        BorderBrush="#9B9B9B"
+                        Margin="28,72,0,0"
+                        TextWrapping="NoWrap"
+                        VerticalScrollBarVisibility="Hidden"
+                        ContextMenu="{x:Null}"
+                        IsReadOnly="False"
+                        Cursor="IBeam"/>
+
+                    <Button
+                        x:Name="EncryptButton"
+                        Width="90"
+                        Height="24"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Encrypt"
+                        Margin="355,71,0,0"
+                        Click="EncryptButton_Click"
+                        Style="{StaticResource PrimaryButton}"/>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>

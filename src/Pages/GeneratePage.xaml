@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="610"
       d:DesignWidth="772"
-      Title="SettingsPage"
+      Title="Generate Page"
       Background="#121416">
 
     <Page.Resources>
@@ -52,7 +52,9 @@
         <Grid
             Grid.Row="1"
             Width="692"
-            Height="470">
+            Height="460"
+            Margin="0,15,0,0"
+            VerticalAlignment="Top">
 
             <Border
                 CornerRadius="7"

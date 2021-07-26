@@ -54,9 +54,9 @@ namespace RSA
                     csp.ImportRSAPublicKey(Convert.FromBase64String(publicKey), out int bytesRead);
 
                     var data = Encoding.Unicode.GetBytes(plainText);
-                    var cypher = csp.Encrypt(data, false);
+                    var cipher = csp.Encrypt(data, false);
 
-                    return Convert.ToBase64String(cypher);
+                    return Convert.ToBase64String(cipher);
                 }
                 finally
                 {
@@ -65,7 +65,7 @@ namespace RSA
             }
         }
 
-        public static string Decrypt(string cypherText, string privateKey)
+        public static string Decrypt(string cipherText, string privateKey)
         {
             using (var csp = new RSACryptoServiceProvider())
             {
@@ -73,7 +73,7 @@ namespace RSA
                 {
                     csp.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out int bytesRead);
 
-                    var dataBytes = Convert.FromBase64String(cypherText);
+                    var dataBytes = Convert.FromBase64String(cipherText);
                     var plainText = csp.Decrypt(dataBytes, false);
 
                     return Encoding.Unicode.GetString(plainText);

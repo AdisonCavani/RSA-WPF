@@ -69,6 +69,7 @@ namespace RSA_WPF
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            Clipboard.Clear();
             this.Close();
         }
 
