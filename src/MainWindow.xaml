@@ -34,7 +34,7 @@
             </Grid.RowDefinitions>
             <StackPanel
                 Orientation="Vertical"
-                Background="#1b1d1f">
+                Background="{StaticResource Background2}">
 
                 <!--#region Menu Buttons Section-->
                 <TextBlock
@@ -73,7 +73,7 @@
         <Grid
             Grid.Column="1"
             Grid.Row="1"
-            Background="#121416">
+            Background="{StaticResource Background2}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
@@ -81,7 +81,7 @@
 
             <Grid
                 Grid.Row="0"
-                Background="#121416"
+                Background="{StaticResource Background}"
                 MouseDown="Grid_MouseDown">
 
                 <!--Close button-->
@@ -93,7 +93,7 @@
                     Style="{StaticResource ControlButton}">
                     <Path
                         Data="{StaticResource Close}"
-                        Fill="#a6a6a6"
+                        Fill="{StaticResource MainColorLight}"
                         Stretch="Uniform"
                         Width="15"
                         Height="15">
@@ -110,7 +110,7 @@
                     <Path
                         Data="{StaticResource Minimize}"
                         Stretch="Uniform"
-                        Fill="#a6a6a6"
+                        Fill="{StaticResource MainColorLight}"
                         Width="15"
                         Height="15">
                     </Path>
@@ -118,7 +118,7 @@
             </Grid>
             <Grid
                 Grid.Row="1"
-                Background="#121416">
+                Background="{StaticResource Background}">
                 <Frame
                     x:Name="Main"
                     NavigationUIVisibility="Hidden"/>

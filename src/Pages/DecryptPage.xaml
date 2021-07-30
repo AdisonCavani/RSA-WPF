@@ -8,7 +8,7 @@
       d:DesignHeight="610"
       d:DesignWidth="772"
       Title="Decrypt Page"
-      Background="#121416">
+      Background="{StaticResource Background}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -31,7 +31,7 @@
             Height="85">
             <Border
                 CornerRadius="7"
-                Background="#1b1d1f">
+                Background="{StaticResource Background2}">
                 <Grid>
                     <TextBlock
                     Margin="20,28,0,0"
@@ -58,7 +58,7 @@
 
             <Border
                 CornerRadius="7"
-                Background="#1b1d1f">
+                Background="{StaticResource Background2}">
                 <Grid>
                     <TextBlock
                         Margin="30,20,0,0"
@@ -70,7 +70,7 @@
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Paste}"
-                            Fill="#a6a6a6"
+                            Fill="{StaticResource MainColorLight}"
                             Stretch="Uniform"
                             Width="12"
                             Height="12"/>
@@ -81,7 +81,7 @@
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
-                            Fill="#a6a6a6"
+                            Fill="{StaticResource MainColorLight}"
                             Stretch="Uniform"
                             Width="12"
                             Height="12"/>
@@ -99,7 +99,7 @@
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Paste}"
-                            Fill="#a6a6a6"
+                            Fill="{StaticResource MainColorLight}"
                             Stretch="Uniform"
                             Width="12"
                             Height="12"/>
@@ -110,7 +110,7 @@
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
-                            Fill="#a6a6a6"
+                            Fill="{StaticResource MainColorLight}"
                             Stretch="Uniform"
                             Width="12"
                             Height="12"/>
@@ -140,7 +140,7 @@
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Copy}"
-                            Fill="#a6a6a6"
+                            Fill="{StaticResource MainColorLight}"
                             Stretch="Uniform"
                             Width="12"
                             Height="12"/>
@@ -151,7 +151,7 @@
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
-                            Fill="#a6a6a6"
+                            Fill="{StaticResource MainColorLight}"
                             Stretch="Uniform"
                             Width="12"
                             Height="12"/>

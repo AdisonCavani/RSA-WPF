@@ -42,7 +42,7 @@
         <Setter Property="Stylus.IsFlicksEnabled"
             Value="false" />
         <Setter Property="Foreground"
-            Value="#ADABAB" />
+            Value="{StaticResource MainColor}"/>
         <Setter Property="Background"
             Value="Transparent" />
         <Setter Property="Width"
@@ -83,23 +83,26 @@
                         <Trigger SourceName="Thumb"
                                 Property="IsMouseOver"
                                 Value="true">
-                            <Setter Value="#9B9B9B"
+                            <Setter
+                                Value="{StaticResource ButtonMouseOver}"
                                 TargetName="Thumb"
-                                Property="Background" />
+                                Property="Background"/>
                         </Trigger>
-                        <Trigger SourceName="Thumb"
-                                Property="IsDragging"
-                                Value="true">
-                            <Setter Value="#808080"
+                        <Trigger
+                            SourceName="Thumb"
+                            Property="IsDragging"
+                            Value="true">
+                            <Setter
+                                Value="{StaticResource ButtonPressed}"
                                 TargetName="Thumb"
-                                Property="Background" />
+                                Property="Background"/>
                         </Trigger>
 
                         <Trigger Property="IsEnabled"
                                 Value="false">
                             <Setter TargetName="Thumb"
                                 Property="Visibility"
-                                Value="Collapsed" />
+                                Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="Orientation"
                                 Value="Horizontal">

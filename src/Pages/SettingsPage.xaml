@@ -7,7 +7,7 @@
       d:DesignHeight="610"
       d:DesignWidth="772"
       Title="SettingsPage"
-      Background="#121416">
+      Background="{StaticResource Background}">
 
     <Grid>
         <TextBlock
@@ -15,6 +15,6 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="32"
-            Foreground="White"/>
+            Foreground="{StaticResource Foreground}"/>
     </Grid>
 </Page>
