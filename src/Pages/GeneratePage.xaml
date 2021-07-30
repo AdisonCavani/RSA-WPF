@@ -60,113 +60,20 @@
                 CornerRadius="7"
                 Background="#1b1d1f">
                 <Grid>
+                    <!--#region SelectKeySize-->
                     <TextBlock
                         Margin="30,20,0,0"
                         Text="Select key size"
                         Style="{StaticResource MainText2}"/>
 
-                    <!--#region Private key-->
-                    <TextBlock
-                        Margin="30,130,0,0"
-                        Text="Private key"
-                        Style="{StaticResource MainText2}"/>
-
-                    <Button
-                        Width="22"
-                        Height="22"
-                        Margin="150,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Click="CopyPrivateKey"
-                        Cursor="Hand"
-                        Style="{StaticResource FunctionButton}">
-                        <Path
-                            Data="{StaticResource Copy}"
-                            Fill="#a6a6a6"
-                            Stretch="Uniform"
-                            Width="12"
-                            Height="12"/>
-                    </Button>
-                    <Button
-                        Width="22"
-                        Height="22"
-                        Margin="180,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Click="ClearPrivateKey"
-                        Cursor="Hand"
-                        Style="{StaticResource FunctionButton}">
-                        <Path
-                            Data="{StaticResource Clear}"
-                            Fill="#a6a6a6"
-                            Stretch="Uniform"
-                            Width="12"
-                            Height="12"/>
-                    </Button>
-
-                    <TextBox
-                        x:Name="PrivateKeyTextBox"
-                        Width="285"
-                        Height="270"
-                        Margin="28,170,0,0"
-                        Style="{StaticResource TextBoxReadOnly}"/>
-                    <!--#endregion-->
-
-                    <!--#region Public key-->
-                    <TextBlock
-                        Margin="355,130,0,0"
-                        Text="Public key"
-                        Style="{StaticResource MainText2}"/>
-
-                    <Button
-                        Width="22"
-                        Height="22"
-                        Margin="466,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Click="CopyPublicKey"
-                        Cursor="Hand"
-                        Style="{StaticResource FunctionButton}">
-                        <Path
-                            Data="{StaticResource Copy}"
-                            Fill="#a6a6a6"
-                            Stretch="Uniform"
-                            Width="12"
-                            Height="12"/>
-                    </Button>
-                    <Button
-                        Width="22"
-                        Height="22"
-                        Margin="496,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Click="ClearPublicKey"
-                        Cursor="Hand"
-                        Style="{StaticResource FunctionButton}">
-                        <Path
-                            Data="{StaticResource Clear}"
-                            Fill="#a6a6a6"
-                            Stretch="Uniform"
-                            Width="12"
-                            Height="12"/>
-                    </Button>
-
-                    <TextBox
-                        x:Name="PublicKeyTextBox"
-                        Width="285"
-                        Height="270"
-                        Margin="353,170,0,0"
-                        Style="{StaticResource TextBoxReadOnly}"/>
-                    <!--#endregion-->
-
                     <ComboBox
                         x:Name="KeySize"
-                        Style="{StaticResource ComboBoxFlatStyle}"
                         Width="100"
                         Margin="30,72,0,0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
-                        SelectionChanged="KeySize_SelectionChanged">
+                        SelectionChanged="KeySize_SelectionChanged"
+                        Style="{StaticResource ComboBoxFlatStyle}">
                         <ComboBoxItem
                             x:Name="A"
                             Content="512 bit"
@@ -199,6 +106,81 @@
                         Margin="163,71,0,0"
                         Click="GenerateButton_Click"
                         Style="{StaticResource PrimaryButton}"/>
+                    <!--#endregion-->
+
+                    <!--#region Private key-->
+                    <TextBlock
+                        Margin="30,130,0,0"
+                        Text="Private key"
+                        Style="{StaticResource MainText2}"/>
+
+                    <Button
+                        Margin="150,137,0,0"
+                        Click="CopyPrivateKey"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+                    <Button
+                        Margin="180,137,0,0"
+                        Click="ClearPrivateKey"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Clear}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+
+                    <TextBox
+                        x:Name="PrivateKeyTextBox"
+                        Width="285"
+                        Height="270"
+                        Margin="28,170,0,0"
+                        Style="{StaticResource TextBoxReadOnly}"/>
+                    <!--#endregion-->
+
+                    <!--#region Public key-->
+                    <TextBlock
+                        Margin="355,130,0,0"
+                        Text="Public key"
+                        Style="{StaticResource MainText2}"/>
+
+                    <Button
+                        Margin="466,137,0,0"
+                        Click="CopyPublicKey"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Copy}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+                    <Button
+                        Margin="496,137,0,0"
+                        Click="ClearPublicKey"
+                        Style="{StaticResource FunctionButton}">
+                        <Path
+                            Data="{StaticResource Clear}"
+                            Fill="#a6a6a6"
+                            Stretch="Uniform"
+                            Width="12"
+                            Height="12"/>
+                    </Button>
+
+                    <TextBox
+                        x:Name="PublicKeyTextBox"
+                        Width="285"
+                        Height="270"
+                        Margin="353,170,0,0"
+                        Style="{StaticResource TextBoxReadOnly}"/>
+                    <!--#endregion-->
                 </Grid>
             </Border>
         </Grid>

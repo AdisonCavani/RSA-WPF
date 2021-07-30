@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using System.Security.Cryptography;
 
 namespace RSA
 {

@@ -65,13 +65,8 @@
                         Text="Private Key"
                         Style="{StaticResource MainText2}"/>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="149,25,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="PastePrivateKey"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Paste}"
@@ -81,13 +76,8 @@
                             Height="12"/>
                     </Button>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="179,25,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="ClearPrivateKey"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
@@ -104,13 +94,8 @@
                         Style="{StaticResource MainText2}"/>
 
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="106,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="PasteCipher"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Paste}"
@@ -120,13 +105,8 @@
                             Height="12"/>
                     </Button>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="136,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="ClearCipher"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
@@ -155,13 +135,8 @@
                         Style="{StaticResource MainText2}"/>
 
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="456,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="CopyPlainText"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Copy}"
@@ -171,13 +146,8 @@
                             Height="12"/>
                     </Button>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="486,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="ClearPlainText"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"

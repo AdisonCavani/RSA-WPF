@@ -45,8 +45,6 @@
         <Style x:Key="PrimaryButton" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#333536"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Cursor" Value="Hand"/>
@@ -77,6 +75,8 @@
 
         <!--Control button-->
         <Style x:Key="ControlButton" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
@@ -105,7 +105,11 @@
         
         <!--Copy button-->
         <Style x:Key="FunctionButton" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Background" Value="#333536"/>
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="Height" Value="22"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>

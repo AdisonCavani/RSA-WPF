@@ -86,12 +86,9 @@
 
                 <!--Close button-->
                 <Button
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
                     Margin="0,0,10,0"
                     Width="35"
                     Height="35"
-                    Cursor="Hand"
                     Click="CloseButton_Click"
                     Style="{StaticResource ControlButton}">
                     <Path
@@ -105,12 +102,9 @@
 
                 <!--Minimalize button-->
                 <Button
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
                     Margin="0,0,45,0"
                     Width="35"
                     Height="35"
-                    Cursor="Hand"
                     Click="MinimizeButton_Click"
                     Style="{StaticResource ControlButton}">
                     <Path

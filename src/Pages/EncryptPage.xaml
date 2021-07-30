@@ -65,13 +65,8 @@
                         Text="Public Key"
                         Style="{StaticResource MainText2}"/>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="141,25,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="PastePublicKey"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Paste}"
@@ -88,13 +83,8 @@
                         Style="{StaticResource MainText2}"/>
 
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="131,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="PastePlainText"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Paste}"
@@ -104,13 +94,8 @@
                             Height="12"/>
                     </Button>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="161,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="ClearPlainText"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
@@ -139,13 +124,8 @@
                         Style="{StaticResource MainText2}"/>
 
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="431,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="CopyCipher"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Copy}"
@@ -155,13 +135,8 @@
                             Height="12"/>
                     </Button>
                     <Button
-                        Width="22"
-                        Height="22"
                         Margin="461,137,0,0"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
                         Click="ClearCipher"
-                        Cursor="Hand"
                         Style="{StaticResource FunctionButton}">
                         <Path
                             Data="{StaticResource Clear}"
