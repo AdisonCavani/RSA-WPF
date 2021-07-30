@@ -107,7 +107,7 @@
                     <TextBox
                         x:Name="PrivateKeyTextBox"
                         Width="285"
-                        Height="275"
+                        Height="270"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="Transparent"
@@ -164,7 +164,7 @@
                     <TextBox
                         x:Name="PublicKeyTextBox"
                         Width="285"
-                        Height="275"
+                        Height="270"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="Transparent"
