@@ -36,25 +36,6 @@
                 Orientation="Vertical"
                 Background="#1b1d1f">
 
-                <!--Profile Image and Username Code-->
-                <!--<StackPanel
-                    Margin="0, 30">
-                    <Ellipse
-                        Height="50"
-                        Width="50">
-                        <Ellipse.Fill>
-                            <ImageBrush
-                                ImageSource="{Binding ProfileImage}"
-                                Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <TextBlock
-                        HorizontalAlignment="Center"
-                        Margin="0,10"
-                        Text="{Binding ProfileName}"
-                        Style="{StaticResource MainText}"/>
-                </StackPanel>-->
-
                 <!--#region Menu Buttons Section-->
                 <TextBlock
                         Margin="20,90,0,15"
@@ -62,21 +43,17 @@
                         Style="{StaticResource TitleText}"/>
 
                 <customcontrols:MenuButton
-                    Margin="0,0,0,0"
-                    Padding="0,0,0,0"
                     Icon="{StaticResource Lock}"
                     IsSelected="True"
                     Text="Encrypt" 
                     GroupName="MenuButton"
                     PreviewMouseLeftButtonUp="EncryptButton_Click"/>
                 <customcontrols:MenuButton
-                    Padding="0,0,0,0"
                     Icon="{StaticResource Visibility}"
                     Text="Decrypt" 
                     GroupName="MenuButton"
                     PreviewMouseLeftButtonUp="DecryptButton_Click"/>
                 <customcontrols:MenuButton
-                    Padding="0,0,0,0"
                     Icon="{StaticResource Code}"
                     Text="Generate" 
                     GroupName="MenuButton"
@@ -84,7 +61,6 @@
             </StackPanel>
             <customcontrols:MenuButton
                 DockPanel.Dock="Bottom"
-                Padding="0,0,0,0"
                 Margin="0,570,0,0"
                 Icon="{StaticResource Settings}"
                 Text="Settings" 
