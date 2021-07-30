@@ -108,18 +108,8 @@
                         x:Name="PrivateKeyTextBox"
                         Width="285"
                         Height="270"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Background="Transparent"
-                        Foreground="#9B9B9B"
-                        SelectionBrush="Transparent"
-                        BorderThickness="0"
                         Margin="28,170,0,0"
-                        TextWrapping="Wrap"
-                        VerticalScrollBarVisibility="Auto"
-                        ContextMenu="{x:Null}"
-                        IsReadOnly="True"
-                        Cursor="Arrow"/>
+                        Style="{StaticResource TextBoxReadOnly}"/>
                     <!--#endregion-->
 
                     <!--#region Public key-->
@@ -165,18 +155,8 @@
                         x:Name="PublicKeyTextBox"
                         Width="285"
                         Height="270"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Background="Transparent"
-                        Foreground="#9B9B9B"
-                        SelectionBrush="Transparent"
-                        BorderThickness="0"
                         Margin="353,170,0,0"
-                        TextWrapping="Wrap"
-                        VerticalScrollBarVisibility="Auto"
-                        ContextMenu="{x:Null}"
-                        IsReadOnly="True"
-                        Cursor="Arrow"/>
+                        Style="{StaticResource TextBoxReadOnly}"/>
                     <!--#endregion-->
 
                     <ComboBox

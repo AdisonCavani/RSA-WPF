@@ -140,21 +140,12 @@
                         x:Name="CipherTextBox"
                         Width="285"
                         Height="275"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Background="Transparent"
-                        Foreground="#9B9B9B"
-                        BorderThickness="1"
-                        BorderBrush="#9B9B9B"
-                        CaretBrush="White"
                         Margin="28,170,0,0"
                         TextWrapping="Wrap"
                         VerticalScrollBarVisibility="Auto"
-                        ContextMenu="{x:Null}"
-                        IsReadOnly="False"
                         AcceptsReturn="True"
                         AcceptsTab="True"
-                        Cursor="IBeam"/>
+                        Style="{StaticResource TextBoxEditable}"/>
                     <!--#endregion-->
 
                     <!--#region Public key-->
@@ -200,37 +191,19 @@
                         x:Name="PlainTextBox"
                         Width="285"
                         Height="275"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Background="Transparent"
-                        Foreground="#9B9B9B"
-                        SelectionBrush="Transparent"
-                        BorderThickness="0"
                         Margin="353,170,0,0"
-                        TextWrapping="Wrap"
-                        VerticalScrollBarVisibility="Auto"
-                        ContextMenu="{x:Null}"
-                        IsReadOnly="True"
-                        Cursor="Arrow"/>
+                        Style="{StaticResource TextBoxReadOnly}"/>
                     <!--#endregion-->
 
                     <TextBox
                         x:Name="PrivateKey"
                         Width="285"
                         Height="22"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Background="Transparent"
-                        Foreground="#9B9B9B"
-                        BorderThickness="1"
-                        BorderBrush="#9B9B9B"
-                        CaretBrush="White"
                         Margin="28,72,0,0"
+                        Padding="5,0,0,0"
                         TextWrapping="NoWrap"
                         VerticalScrollBarVisibility="Hidden"
-                        ContextMenu="{x:Null}"
-                        IsReadOnly="False"
-                        Cursor="IBeam"/>
+                        Style="{StaticResource TextBoxEditable}"/>
 
                     <Button
                         x:Name="DecryptButton"

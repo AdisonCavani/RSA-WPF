@@ -281,6 +281,65 @@
             <Setter Property="Padding" Value="3"/>
         </Style>
         <!--#endregion-->
+        
+        <!--#region TextBox-->
+        <Style TargetType="TextBox" x:Key="TextBoxEditable">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#9B9B9B"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="SelectionBrush" Value="#0c0c0d"/>
+            <Setter Property="BorderBrush" Value="#333536"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="CaretBrush" Value="White"/>
+            <Setter Property="ContextMenu" Value="{x:Null}"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="IsReadOnly" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True"
+                                CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#4a4d4f"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#626669"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxReadOnly">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#9B9B9B"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="SelectionBrush" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#333536"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CaretBrush" Value="White"/>
+            <Setter Property="ContextMenu" Value="{x:Null}"/>
+            <Setter Property="Cursor" Value="Arrow"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
+        <!--#endregion-->
 
     </Application.Resources>
 </Application>
