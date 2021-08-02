@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Security.Cryptography;
+using System.Windows;
 
 namespace RSA
 {
@@ -55,6 +56,19 @@ namespace RSA
 
                     return Convert.ToBase64String(cipher);
                 }
+
+                catch (FormatException)
+                {
+                    MessageBox.Show("Format exception");
+                    return null;
+                }
+
+                catch (CryptographicException)
+                {
+                    MessageBox.Show("Cryptographic exception");
+                    return null;
+                }
+
                 finally
                 {
                     csp.PersistKeyInCsp = false;
@@ -75,6 +89,19 @@ namespace RSA
 
                     return Encoding.Unicode.GetString(plainText);
                 }
+
+                catch (FormatException)
+                {
+                    MessageBox.Show("Format exception");
+                    return null;
+                }
+
+                catch (CryptographicException)
+                {
+                    MessageBox.Show("Cryptographic exception");
+                    return null;
+                }
+
                 finally
                 {
                     csp.PersistKeyInCsp = false;

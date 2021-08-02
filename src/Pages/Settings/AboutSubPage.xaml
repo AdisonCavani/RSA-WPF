@@ -1,0 +1,22 @@
+﻿<Page x:Class="RSA_WPF.Pages.Settings.AboutSubPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RSA_WPF.Pages.Settings"
+      mc:Ignorable="d" 
+      d:DesignHeight="380"
+      d:DesignWidth="690"
+      Title="About">
+
+    <Grid>
+        <Border
+            CornerRadius="7"
+            Background="{StaticResource Background2}">
+            <TextBlock
+                Text="About"
+                Style="{StaticResource MainText}"/>
+        </Border>
+
+    </Grid>
+</Page>

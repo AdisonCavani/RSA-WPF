@@ -1,0 +1,185 @@
+﻿<Page x:Class="RSA_WPF.Pages.Settings.GeneralSubPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RSA_WPF.Pages.Settings"
+      mc:Ignorable="d" 
+      d:DesignHeight="380"
+      d:DesignWidth="690"
+      Title="General">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Border
+            CornerRadius="7"
+            Background="{StaticResource Background2}">
+
+            <StackPanel
+                Orientation="Vertical"
+                Margin="20,20,20,20">
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0,0,0,20"
+                    Width="650">
+
+                    <Border
+                        Background="#2c3448"
+                        CornerRadius="35"
+                        Width="35"
+                        Height="35"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                        <Path
+                            Data="{StaticResource Monitor}"
+                            Fill="{StaticResource SettingsButtonForeground}"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="15"
+                            Height="15"/>
+                    </Border>
+
+                    <TextBlock
+                        Margin="50,0,0,0"
+                        Text="General"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="50,25,0,0"
+                        Text="Change settings that affect WPF-RSA in general"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                </Grid>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0,0,0,20"
+                    Width="650">
+                    <TextBlock
+                        Text="Theme"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Select the theme"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <ComboBox
+                        x:Name="Theme"
+                        Width="110"
+                        Height="25"
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        SelectionChanged="Theme_SelectionChanged"
+                        Style="{StaticResource ComboBoxFlatStyle}">
+                        <ComboBoxItem
+                            x:Name="LightTheme"
+                            Content="Light"/>
+                        <ComboBoxItem
+                            x:Name="DarkTheme"
+                            Content="Dark"/>
+                        <ComboBoxItem
+                            x:Name="SystemTheme"
+                            Content="System theme"/>
+                    </ComboBox>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0,20,0,20"
+                    Width="650">
+                    <TextBlock
+                        Text="Clipboard"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Set time after clipboard will clear"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <ComboBox
+                        x:Name="Clipboard"
+                        Width="110"
+                        Height="25"
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        SelectionChanged="Theme_SelectionChanged"
+                        Style="{StaticResource ComboBoxFlatStyle}">
+                        <ComboBoxItem
+                            x:Name="Never"
+                            Content="Never"/>
+                        <ComboBoxItem
+                            x:Name="Fifteen"
+                            Content="15 seconds"/>
+                        <ComboBoxItem
+                            x:Name="Thirty"
+                            Content="30 seconds"/>
+                        <ComboBoxItem
+                            x:Name="Minute"
+                            Content="1 minute"/>
+                    </ComboBox>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0,20,0,20"
+                    Width="650">
+                    <TextBlock
+                        Text="Key lenght"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Set default key lenght"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <ComboBox
+                        x:Name="KeyLenght"
+                        Width="110"
+                        Height="25"
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        SelectionChanged="Theme_SelectionChanged"
+                        Style="{StaticResource ComboBoxFlatStyle}">
+                        <ComboBoxItem
+                            x:Name="A"
+                            Content="512 bit"/>
+                        <ComboBoxItem
+                            x:Name="B"
+                            Content="1024 bit"/>
+                        <ComboBoxItem
+                            x:Name="C"
+                            Content="2048 bit"/>
+                        <ComboBoxItem
+                            x:Name="D"
+                            Content="3072 bit"/>
+                        <ComboBoxItem
+                            x:Name="E"
+                            Content="4092 bit"/>
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

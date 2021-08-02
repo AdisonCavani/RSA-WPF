@@ -170,7 +170,7 @@
                         Width="285"
                         Height="22"
                         Margin="28,72,0,0"
-                        Padding="5,0,0,0"
+                        Padding="5,0,5,0"
                         TextWrapping="NoWrap"
                         VerticalScrollBarVisibility="Hidden"
                         Style="{StaticResource TextBoxEditable}"/>

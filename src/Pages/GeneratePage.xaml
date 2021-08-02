@@ -76,24 +76,19 @@
                         Style="{StaticResource ComboBoxFlatStyle}">
                         <ComboBoxItem
                             x:Name="A"
-                            Content="512 bit"
-                            Visibility="{Binding VisibilityA}"/>
+                            Content="512 bit"/>
                         <ComboBoxItem
                             x:Name="B"
-                            Content="1024 bit"
-                            Visibility="{Binding VisibilityB}"/>
+                            Content="1024 bit"/>
                         <ComboBoxItem
                             x:Name="C"
-                            Content="2048 bit"
-                            Visibility="{Binding VisibilityC}"/>
+                            Content="2048 bit"/>
                         <ComboBoxItem
                             x:Name="D"
-                            Content="3072 bit"
-                            Visibility="{Binding VisibilityD}"/>
+                            Content="3072 bit"/>
                         <ComboBoxItem
                             x:Name="E"
-                            Content="4096 bit"
-                            Visibility="{Binding VisibilityE}"/>
+                            Content="4096 bit"/>
                     </ComboBox>
 
                     <Button

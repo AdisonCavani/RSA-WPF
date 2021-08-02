@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:customcontrols="clr-namespace:RSA_WPF.customcontrols"
       mc:Ignorable="d" 
       d:DesignHeight="610"
       d:DesignWidth="772"
@@ -11,10 +12,50 @@
 
     <Grid>
         <TextBlock
-            Text="Settings Page"
+            Margin="40,45,0,0"
+            Text="Settings"
+            Style="{StaticResource MainText2}"/>
+        <StackPanel
+            Margin="36,110,0,0"
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left">
+            
+            <customcontrols:SettingsButton
+                IsSelected="True"
+                Text="General"
+                GroupName="SettingsButton"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewMouseLeftButtonUp="GeneralButton_Click"/>
+
+            <customcontrols:SettingsButton
+                IsSelected="False"
+                Text="About"
+                GroupName="SettingsButton"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewMouseLeftButtonUp="AboutButton_Click"/>
+
+            <customcontrols:SettingsButton
+                IsSelected="False"
+                Text="Help"
+                GroupName="SettingsButton"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                PreviewMouseLeftButtonUp="HelpButton_Click"/>
+        </StackPanel>
+
+        <Grid
+            VerticalAlignment="Top"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="32"
-            Foreground="{StaticResource Foreground}"/>
+            Margin="0,170,0,0"
+            Width="690"
+            Height="400">
+            <Frame
+                x:Name="SettingFrame"
+                NavigationUIVisibility="Hidden"
+                Source="Settings/GeneralSubPage.xaml"/>
+        </Grid>
     </Grid>
 </Page>

@@ -25,9 +25,6 @@ namespace RSA_WPF
         {
             InitializeComponent();
             this.DataContext = this;
-
-            // Loading default page
-            Main.Content = new EncryptPage();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
