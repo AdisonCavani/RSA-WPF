@@ -9,14 +9,167 @@
       d:DesignWidth="690"
       Title="About">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
         <Border
             CornerRadius="7"
             Background="{StaticResource Background2}">
-            <TextBlock
-                Text="About"
-                Style="{StaticResource MainText}"/>
-        </Border>
 
+            <StackPanel
+                Orientation="Vertical"
+                Margin="0,20,0,0">
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,0,0,20"
+                    Width="650">
+
+                    <Border
+                        Background="#2c3448"
+                        CornerRadius="35"
+                        Width="35"
+                        Height="35"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                        <Path
+                            Data="{StaticResource Info}"
+                            Fill="{StaticResource SettingsButtonForeground}"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="15"
+                            Height="15"/>
+                    </Border>
+
+                    <TextBlock
+                        Margin="50,0,0,0"
+                        Text="About"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="50,25,0,0"
+                        Text="Get information about RSA-WPF program"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,0,15"
+                    Width="650">
+                    <TextBlock
+                        Text="Version"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Application version"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        x:Name="AppVersion"
+                        Margin="0,0,10,0"
+                        Text=""
+                        Style="{StaticResource SettingsText}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1" Margin="20,0,20,0"/>
+
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,0,15"
+                    Width="650">
+                    <TextBlock
+                        Text=".NET version"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Currently running .NET version"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        x:Name="NETversion"
+                        Margin="0,0,10,0"
+                        Text=""
+                        Style="{StaticResource SettingsText}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>
+                    <TextBlock/>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1" Margin="20,0,20,0"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,0,15"
+                    Width="650">
+                    <TextBlock
+                        Text="Windows version"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Currently running Windows 10 version"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        x:Name="WindowsVersion"
+                        Margin="0,0,10,0"
+                        Text=""
+                        Style="{StaticResource SettingsText}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1" Margin="20,0,20,0"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,10,0"
+                    Width="650">
+                    <TextBlock
+                        Text="License"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Check program license"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <Button
+                        Style="{StaticResource ExternalButton}"
+                        Click="License_Click"
+                        Margin="0,0,10,0">
+                        <Path
+                            Data="{StaticResource ExternalLink}"
+                            Fill="#a4a5a5"
+                            Stretch="Uniform"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Width="18"
+                            Height="18">
+                        </Path>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
