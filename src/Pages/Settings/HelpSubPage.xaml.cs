@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,38 @@ namespace RSA_WPF.Pages.Settings
         public HelpSubPage()
         {
             InitializeComponent();
+        }
+
+        private void Release_Click(object sender, RoutedEventArgs e)
+        {
+            Process myProcess = new Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://github.com/AdisonCavani/RSA-WPF/releases";
+            myProcess.Start();
+        }
+
+        private void Repo_Click(object sender, RoutedEventArgs e)
+        {
+            Process myProcess = new Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://github.com/AdisonCavani/RSA-WPF";
+            myProcess.Start();
+        }
+
+        private void Bug_Click(object sender, RoutedEventArgs e)
+        {
+            Process myProcess = new Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://github.com/AdisonCavani/RSA-WPF/issues";
+            myProcess.Start();
+        }
+
+        private void PR_Click(object sender, RoutedEventArgs e)
+        {
+            Process myProcess = new Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://github.com/AdisonCavani/RSA-WPF/pulls";
+            myProcess.Start();
         }
     }
 }

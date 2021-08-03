@@ -24,12 +24,12 @@
 
             <StackPanel
                 Orientation="Vertical"
-                Margin="20,20,20,20">
+                Margin="0,20,0,20">
 
                 <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="0,0,0,20"
+                    Margin="20,0,0,20"
                     Width="650">
 
                     <Border
@@ -61,10 +61,12 @@
                     <TextBlock/>
                 </Grid>
 
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1"/>
+
                 <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="0,0,0,20"
+                    Margin="20,20,0,20"
                     Width="650">
                     <TextBlock
                         Text="Theme"
@@ -96,12 +98,12 @@
                     </ComboBox>
                 </Grid>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1"/>
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1" Margin="20,0,20,0"/>
 
                 <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="0,20,0,20"
+                    Margin="20,20,0,20"
                     Width="650">
                     <TextBlock
                         Text="Clipboard"
@@ -136,12 +138,12 @@
                     </ComboBox>
                 </Grid>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1"/>
+                <Rectangle HorizontalAlignment="Stretch" Fill="#333436" Height="1" Margin="20,0,20,0"/>
 
                 <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Margin="0,20,0,20"
+                    Margin="20,20,0,20"
                     Width="650">
                     <TextBlock
                         Text="Key lenght"
@@ -180,6 +182,5 @@
                 </Grid>
             </StackPanel>
         </Border>
-
     </Grid>
 </Page>
