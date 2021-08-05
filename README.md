@@ -3,7 +3,17 @@
 Application let user to encrypt, decrypt and generate key pair using RSA asymetric encryption. <br>
 It can be used to send symetric key like AES or short message - depending on key lenght (longer key = longer message).
 
-## How to use this?
+## Get started
+ - [FAQ](#faq)
+   * [How to use this?](#how-to-use-this)
+   * [What key size should I use?](#what-key-size-should-i-use)
+   * [Message complexity problem](#message-complexity-problem)
+   * [How should I store my private and public key?](#how-should-i-store-my-private-and-public-key)
+
+
+## FAQ
+
+### How to use this?
 
 You can watch [this](https://www.youtube.com/watch?v=GSIDS_lvRv4) explanatory video or read example below.<br>
 
@@ -17,7 +27,7 @@ When Bob receive encrypted message, he will decrypt it using his private key.<br
 
 <b>Encrypting plain text with public key is a one-way operation - it cannot be undone using public key.</b>
 
-## What key size should I use?
+### What key size should I use?
 
 512 bit key is unsafe and it can be cracked in a few seconds on modern PC. Currently longest cracked key is 795 bits.<br>
 My recommendation is to use 2048 bit keys just like TLS protocol.<br>
@@ -32,11 +42,11 @@ Key lenght | Security
 3072 bit | Longer is better, use if you can afford it
 4096 bit | Longer is better, use if you can afford it
 
-## Message complexity problem
+### Message complexity problem
 
 Short key 
  
-## How should I store my private and public key?
+### How should I store my private and public key?
 
 The best solution is to use a offline password manager, for example: [KeePassXC](https://keepassxc.org).<br>
 <b>Do not store private key in .txt file or any other unencrypted file!</b>
