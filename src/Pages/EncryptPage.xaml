@@ -112,8 +112,8 @@
                         Margin="28,170,0,0"
                         TextWrapping="Wrap"
                         VerticalScrollBarVisibility="Auto"
-                        AcceptsReturn="True"
-                        AcceptsTab="True"
+                        AcceptsReturn="False"
+                        AcceptsTab="False"
                         Style="{StaticResource TextBoxEditable}"/>
                     <!--#endregion-->
 
