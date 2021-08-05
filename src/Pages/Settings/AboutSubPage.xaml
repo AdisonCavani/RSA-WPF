@@ -41,7 +41,7 @@
                         VerticalAlignment="Center">
                         <Path
                             Data="{StaticResource Info}"
-                            Fill="{StaticResource SettingsButtonForeground}"
+                            Fill="{StaticResource SettingsButtonForegroundPressed}"
                             Stretch="Uniform"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -56,7 +56,7 @@
                     <TextBlock/>
                     <TextBlock
                         Margin="50,25,0,0"
-                        Text="Get information about RSA-WPF program"
+                        Text="Get information about RSA program"
                         Style="{StaticResource SettingsText}"/>
                     <TextBlock/>
                 </Grid>

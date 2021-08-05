@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA-WPF", "RSA-WPF.csproj", "{B3D6EA5E-F3CD-4FBF-AB0A-1F864F3B9B91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA-WPF", "RSA-WPF.csproj", "{B3D6EA5E-F3CD-4FBF-AB0A-1F864F3B9B91}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup", "..\setup\setup.vdproj", "{940B3739-7B3F-4E38-9FB6-E14916BD20D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{B3D6EA5E-F3CD-4FBF-AB0A-1F864F3B9B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D6EA5E-F3CD-4FBF-AB0A-1F864F3B9B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D6EA5E-F3CD-4FBF-AB0A-1F864F3B9B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940B3739-7B3F-4E38-9FB6-E14916BD20D7}.Debug|Any CPU.ActiveCfg = Debug
+		{940B3739-7B3F-4E38-9FB6-E14916BD20D7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
