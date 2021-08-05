@@ -22,6 +22,10 @@ It can be used to send symetric key like AES or short message - depending on key
    * [Message complexity problem](#message-complexity-problem)
    * [How should I store my private and public key?](#how-should-i-store-my-private-and-public-key)
 
+ - [Errors and exceptions](#errors-and-exceptions)
+   * [Cryptographic exception](#cryptographic-exception)
+   * [Format exception](#format-exception)
+
 
 ## Installation
 
@@ -84,3 +88,18 @@ Key lenght | Data
 
 The best solution is to use a offline password manager, for example: [KeePassXC](https://keepassxc.org).<br>
 <b>Do not store private key in .txt file or any other unencrypted file!</b>
+
+ ## Errors and exceptions
+ 
+ ### Cryptographic exception
+ 
+ This might cause this exception:
+ - [encrypting too many data](#message-complexity-problem)
+ - decrypting wrong cipher
+ - decrypting cipher with wrong key
+ 
+ ### Format exception
+ 
+  This might cause this exception:
+  - entering key in wrong format
+  - entering cipher in wrong format
