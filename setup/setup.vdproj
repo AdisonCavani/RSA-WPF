@@ -251,7 +251,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RSA"
         "ProductCode" = "8:{7BEBA8E9-85BC-4758-97E8-B168DAEDC0E4}"
-        "PackageCode" = "8:{3D385FF7-977F-46FC-B613-1E8C8985D3D8}"
+        "PackageCode" = "8:{5C1B0D8C-5A77-49FB-8742-A8FA1CD62FF6}"
         "UpgradeCode" = "8:{53A62D50-2C68-4C0A-8371-753E95D6A84C}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -259,7 +259,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:RSA"
+        "Manufacturer" = "8:\\"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://github.com/AdisonCavani/RSA-WPF"
         "Title" = "8:Setup"
@@ -371,7 +371,21 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_071014FBB9F24C1388BA2C35B38C3FBC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_098C5ED9F0A84FF1865A1BA30B1CE36D"
+            {
+            "Name" = "8:RSA"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_8B957720D2EC4937A1419455175E8DAC"
+            "Folder" = "8:_F83AD9F1ADD0481F8925C3319184CBEA"
+            "WorkingFolder" = "8:_B2F53B19DCBE4A67B2CBE48442EE9AB6"
+            "Icon" = "8:_9F036398E8564F518A368682087CE452"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DD14FA3005844280B0E6ACA20FD9168C"
             {
             "Name" = "8:RSA"
             "Arguments" = "8:"
