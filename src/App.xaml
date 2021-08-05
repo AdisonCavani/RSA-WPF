@@ -19,9 +19,13 @@
         <SolidColorBrush x:Key="ControlButtonMouseOver" Color="#242424"/>
         <SolidColorBrush x:Key="ControlButtonPressed" Color="#353535"/>
         <SolidColorBrush x:Key="SelectionBrush" Color="#0c0c0d"/>
-
+        <SolidColorBrush x:Key="SettingsTextForeground" Color="#a4a5a5"/>
         <SolidColorBrush x:Key="SettingsButtonBackground" Color="#1c212b"/>
-        <SolidColorBrush x:Key="SettingsButtonForeground" Color="#6c92ea"/>
+        <SolidColorBrush x:Key="SettingsButtonBackgroundMouseOver" Color="#181a20"/>
+        <SolidColorBrush x:Key="SettingsButtonForeground" Color="#a1a1a1"/>
+        <SolidColorBrush x:Key="SettingsButtonForegroundPressed" Color="#6c92ea"/>
+        <SolidColorBrush x:Key="SettingsPathBackground" Color="#2c3448"/>
+        <SolidColorBrush x:Key="SeparatorColor" Color="#333436"/>
         <!--#endregion-->
 
         <!--#region Text styles-->
@@ -69,7 +73,7 @@
         </Style>
 
         <Style x:Key="SettingsText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#a4a5a5"/>
+            <Setter Property="Foreground" Value="{StaticResource SettingsTextForeground}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="FontSize" Value="14"/>

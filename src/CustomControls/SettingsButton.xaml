@@ -12,7 +12,7 @@
         <!--#region Menu Text Style-->
         <Style x:Key="MenuTextStyle" TargetType="{x:Type TextBlock}">
 
-            <Setter Property="Foreground" Value="#a1a1a1"/>
+            <Setter Property="Foreground" Value="{StaticResource SettingsButtonForeground}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -23,11 +23,11 @@
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
-                    <Setter Property="Foreground" Value="#a1a1a1"/>
+                    <Setter Property="Foreground" Value="{StaticResource SettingsButtonForeground}"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
-                    <Setter Property="Foreground" Value="#6c92ea"/>
+                    <Setter Property="Foreground" Value="{StaticResource SettingsButtonForegroundPressed}"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -66,10 +66,10 @@
                                 <Setter Property="IsChecked" Value="True"/>
                             </DataTrigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#181a20"/>
+                                <Setter Property="Background" Value="{StaticResource SettingsButtonBackgroundMouseOver}"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="#1c212b"/>
+                                <Setter Property="Background" Value="{StaticResource SettingsButtonBackground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

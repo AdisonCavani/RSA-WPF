@@ -8,8 +8,5 @@
     <Setting Name="KeyLenght" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2048</Value>
     </Setting>
-    <Setting Name="Theme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">System</Value>
-    </Setting>
   </Settings>
 </SettingsFile>
