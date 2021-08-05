@@ -23,13 +23,156 @@ namespace RSA_WPF.Pages.Settings
         public GeneralSubPage()
         {
             InitializeComponent();
-            Theme.SelectedIndex = 2;
-            Clipboard.SelectedIndex = 2;
-            KeyLenght.SelectedIndex = 2;
+            CheckSettings();
+        }
+
+        public void CheckSettings()
+        {
+            CheckTheme();
+            CheckClipboard();
+            CheckKeyLenght();
+        }
+
+        private void CheckTheme()
+        {
+            if (Properties.Settings.Default.Theme == "System")
+            {
+                Theme.SelectedIndex = 0; // Set system theme
+            }
+            else if (Properties.Settings.Default.Theme == "Light")
+            {
+                Theme.SelectedIndex = 1; // Set light theme
+            }
+            else if (Properties.Settings.Default.Theme == "Dark")
+            {
+                Theme.SelectedIndex = 2;// Set dark theme
+            }
+        }
+
+        private void CheckClipboard()
+        {
+            if (Properties.Settings.Default.ClearClipboardTime == 0)
+            {
+                Clipboard.SelectedIndex = 0; // Set never
+            }
+            else if (Properties.Settings.Default.ClearClipboardTime == 15)
+            {
+                Clipboard.SelectedIndex = 1; // Set 15 sec
+            }
+            else if (Properties.Settings.Default.ClearClipboardTime == 30)
+            {
+                Clipboard.SelectedIndex = 2;// Set 30 sec
+            }
+
+            else if (Properties.Settings.Default.ClearClipboardTime == 60)
+            {
+                Clipboard.SelectedIndex = 3;// Set 1 min
+            }
+        }
+
+        private void CheckKeyLenght()
+        {
+            if (Properties.Settings.Default.KeyLenght == 512)
+            {
+                KeyLenght.SelectedIndex = 0; // Set 512 bit key
+            }
+            else if (Properties.Settings.Default.KeyLenght == 1024)
+            {
+                KeyLenght.SelectedIndex = 1; // Set 1024 bit key
+            }
+            else if (Properties.Settings.Default.KeyLenght == 2048)
+            {
+                KeyLenght.SelectedIndex = 2; // Set 2048 bit key
+            }
+
+            else if (Properties.Settings.Default.KeyLenght == 3072)
+            {
+                KeyLenght.SelectedIndex = 3; // Set 3072 bit key
+            }
+
+            else if (Properties.Settings.Default.KeyLenght == 4096)
+            {
+                KeyLenght.SelectedIndex = 4; // Set 4096 bit key
+            }
         }
 
         private void Theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            #region Settings
+            if (Theme.SelectedIndex == 0)
+            {
+                Properties.Settings.Default.Theme = "System";
+                Properties.Settings.Default.Save();
+            }
+
+            else if (Theme.SelectedIndex == 1)
+            {
+                Properties.Settings.Default.Theme = "Light";
+                Properties.Settings.Default.Save();
+            }
+
+            else if (Theme.SelectedIndex == 2)
+            {
+                Properties.Settings.Default.Theme = "Dark";
+                Properties.Settings.Default.Save();
+            }
+
+            if (Clipboard.SelectedIndex == 0)
+            {
+                Properties.Settings.Default.ClearClipboardTime = 0;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (Clipboard.SelectedIndex == 1)
+            {
+                Properties.Settings.Default.ClearClipboardTime = 15;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (Clipboard.SelectedIndex == 2)
+            {
+                Properties.Settings.Default.ClearClipboardTime = 30;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (Clipboard.SelectedIndex == 3)
+            {
+                Properties.Settings.Default.ClearClipboardTime = 60;
+                Properties.Settings.Default.Save();
+            }
+
+            if (KeyLenght.SelectedIndex == 0)
+            {
+                Properties.Settings.Default.KeyLenght = 512;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (KeyLenght.SelectedIndex == 1)
+            {
+                Properties.Settings.Default.KeyLenght = 1024;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (KeyLenght.SelectedIndex == 2)
+            {
+                Properties.Settings.Default.KeyLenght = 2048;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (KeyLenght.SelectedIndex == 3)
+            {
+                Properties.Settings.Default.KeyLenght = 3072;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (KeyLenght.SelectedIndex == 4)
+            {
+                Properties.Settings.Default.KeyLenght = 4096;
+                Properties.Settings.Default.Save();
+            }
+
+            #endregion
+
             #region Theme
             if (SystemTheme.IsSelected == true)
             {

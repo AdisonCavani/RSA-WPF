@@ -73,16 +73,16 @@ namespace RSA_WPF
             {
                 Clipboard.SetText(plainText);
 
-                // Show toast notification
-                new ToastContentBuilder()
-                    .AddArgument("action", "viewConversation")
-                    .AddArgument("conversationId", 9813)
-                    .AddText("Plain text was copied to clipboard")
-                    .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
-                    .Show();
-
-                if ((bool)Settings.Default["ClearClipboard"] == true)
+                if (Settings.Default.ClearClipboardTime != 0)
                 {
+                    // Show toast notification
+                    new ToastContentBuilder()
+                        .AddArgument("action", "viewConversation")
+                        .AddArgument("conversationId", 9813)
+                        .AddText("Plain text was copied to clipboard")
+                        .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
+                        .Show();
+
                     await Task.Delay((byte)Settings.Default["ClearClipboardTime"] * 1000); // Convert sec to ms
                     if (Clipboard.GetText() == plainText)
                     {

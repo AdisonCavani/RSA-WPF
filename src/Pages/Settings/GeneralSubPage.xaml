@@ -87,14 +87,14 @@
                         SelectionChanged="Theme_SelectionChanged"
                         Style="{StaticResource ComboBoxFlatStyle}">
                         <ComboBoxItem
+                            x:Name="SystemTheme"
+                            Content="System theme"/>
+                        <ComboBoxItem
                             x:Name="LightTheme"
                             Content="Light"/>
                         <ComboBoxItem
                             x:Name="DarkTheme"
                             Content="Dark"/>
-                        <ComboBoxItem
-                            x:Name="SystemTheme"
-                            Content="System theme"/>
                     </ComboBox>
                 </Grid>
 
@@ -177,7 +177,7 @@
                             Content="3072 bit"/>
                         <ComboBoxItem
                             x:Name="E"
-                            Content="4092 bit"/>
+                            Content="4096 bit"/>
                     </ComboBox>
                 </Grid>
             </StackPanel>

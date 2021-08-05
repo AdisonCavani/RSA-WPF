@@ -16,7 +16,7 @@ namespace RSA_WPF
         public GeneratePage()
         {
             InitializeComponent();
-            KeySize.SelectedIndex = 2; // Default key lenght - 2048
+            CheckKeyLenght(); // Default key lenght
             GenerateButton_Click(new object(), new RoutedEventArgs()); // Generate key pair
         }
 
@@ -49,16 +49,16 @@ namespace RSA_WPF
             {
                 Clipboard.SetText(privateKey);
 
-                // Show toast notification
-                new ToastContentBuilder()
-                    .AddArgument("action", "viewConversation")
-                    .AddArgument("conversationId", 9813)
-                    .AddText("Private key was copied to clipboard")
-                    .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
-                    .Show();
-
-                if ((bool)Settings.Default["ClearClipboard"] == true)
+                if (Settings.Default.ClearClipboardTime != 0)
                 {
+                    // Show toast notification
+                    new ToastContentBuilder()
+                        .AddArgument("action", "viewConversation")
+                        .AddArgument("conversationId", 9813)
+                        .AddText("Private key was copied to clipboard")
+                        .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
+                        .Show();
+
                     await Task.Delay((byte)Settings.Default["ClearClipboardTime"] * 1000); // Convert sec to ms
                     if (Clipboard.GetText() == privateKey)
                     {
@@ -77,16 +77,16 @@ namespace RSA_WPF
             {
                 Clipboard.SetText(publicKey);
 
-                // Show toast notification
-                new ToastContentBuilder()
-                    .AddArgument("action", "viewConversation")
-                    .AddArgument("conversationId", 9813)
-                    .AddText("Public key was copied to clipboard")
-                    .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
-                    .Show();
-
-                if ((bool)Settings.Default["ClearClipboard"] == true)
+                if (Settings.Default.ClearClipboardTime != 0)
                 {
+                    // Show toast notification
+                    new ToastContentBuilder()
+                        .AddArgument("action", "viewConversation")
+                        .AddArgument("conversationId", 9813)
+                        .AddText("Public key was copied to clipboard")
+                        .AddText($"Clipboard will automaticaly clear in {(byte)Settings.Default["ClearClipboardTime"]} seconds!")
+                        .Show();
+
                     await Task.Delay((byte)Settings.Default["ClearClipboardTime"] * 1000); // Convert sec to ms
                     if (Clipboard.GetText() == publicKey)
                     {
@@ -118,6 +118,32 @@ namespace RSA_WPF
             {
                 Clipboard.Clear();
                 publicKey = string.Empty;
+            }
+        }
+
+        private void CheckKeyLenght()
+        {
+            if (Properties.Settings.Default.KeyLenght == 512)
+            {
+                KeySize.SelectedIndex = 0;
+            }
+            else if (Properties.Settings.Default.KeyLenght == 1024)
+            {
+                KeySize.SelectedIndex = 1;
+            }
+            else if (Properties.Settings.Default.KeyLenght == 2048)
+            {
+                KeySize.SelectedIndex = 2;
+            }
+
+            else if (Properties.Settings.Default.KeyLenght == 3072)
+            {
+                KeySize.SelectedIndex = 3;
+            }
+
+            else if (Properties.Settings.Default.KeyLenght == 4096)
+            {
+                KeySize.SelectedIndex = 4;
             }
         }
 
