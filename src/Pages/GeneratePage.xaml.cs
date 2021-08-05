@@ -1,10 +1,10 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
-using Microsoft.Toolkit.Uwp.Notifications;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
 using RSA;
 using RSA_WPF.Properties;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace RSA_WPF
 {
