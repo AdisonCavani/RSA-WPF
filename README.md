@@ -5,7 +5,11 @@
 
 
 Application let user to encrypt, decrypt and generate key pair using RSA asymetric encryption. <br>
-It can be used to send symetric key like AES or short message - depending on key lenght (longer key = longer message).
+It can be used to send symetric key like AES or short message - depending on key lenght (longer key = longer message).<br><br>
+
+<p align="left">
+<img src="https://raw.githubusercontent.com/AdisonCavani/RSA-WPF/master/docs/Generate.png" width="70%"/>
+</p><br>
 
 ## Get started
  - [Installation](#installation)
