@@ -1,15 +1,35 @@
 # RSA
 
+[![name](https://img.shields.io/github/license/AdisonCavani/RSA-WPF)](https://github.com/AdisonCavani/RSA-WPF/blob/master/LICENSE)
+[![name](https://img.shields.io/github/v/release/AdisonCavani/RSA-WPF)](https://github.com/AdisonCavani/RSA-WPF/releases/latest)
+
+
 Application let user to encrypt, decrypt and generate key pair using RSA asymetric encryption. <br>
 It can be used to send symetric key like AES or short message - depending on key lenght (longer key = longer message).
 
 ## Get started
+ - [Installation](#installation)
+   * [Installing application](#installing-application)
+   * [Supported OS](#supported-os)
+
  - [FAQ](#faq)
    * [How to use this?](#how-to-use-this)
    * [What key size should I use?](#what-key-size-should-i-use)
    * [Message complexity problem](#message-complexity-problem)
    * [How should I store my private and public key?](#how-should-i-store-my-private-and-public-key)
 
+
+## Installation
+
+### Installing application
+
+Download latest .zip package from [here](https://github.com/AdisonCavani/RSA-WPF/releases/latest).<br>
+Unzip and run ``setup.exe``. Follow installer instructions.
+
+### Supported OS
+
+Currently this application support only Windows. <br>
+In the future I might port app to Linux with GTK or MAUI.
 
 ## FAQ
 
@@ -44,7 +64,17 @@ Key lenght | Security
 
 ### Message complexity problem
 
-Short key 
+Main limitation of RSA algorithm is a limit of data lenght. <br>
+Short key will limit message lenght.<br>
+If you exceed data limit, you will get "cryptographic exception" dialog.
+ 
+Key lenght | Data
+------------ | -------------
+512 bit  | 26 characters
+1024 bit | 58 characters
+2048 bit | 122 characters
+3072 bit | 186 characters
+4096 bit | 250 characters
  
 ### How should I store my private and public key?
 
