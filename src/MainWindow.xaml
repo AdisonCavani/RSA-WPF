@@ -17,6 +17,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/icons.xaml"/>
+                <ResourceDictionary Source="/Resources/LightTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -34,7 +35,7 @@
             </Grid.RowDefinitions>
             <StackPanel
                 Orientation="Vertical"
-                Background="{StaticResource Background2}">
+                Background="{DynamicResource Background2}">
 
                 <!--#region Menu Buttons Section-->
                 <TextBlock
@@ -73,7 +74,7 @@
         <Grid
             Grid.Column="1"
             Grid.Row="1"
-            Background="{StaticResource Background2}">
+            Background="{DynamicResource Background2}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
@@ -81,7 +82,7 @@
 
             <Grid
                 Grid.Row="0"
-                Background="{StaticResource Background}"
+                Background="{DynamicResource Background}"
                 MouseDown="Grid_MouseDown">
 
                 <!--Close button-->
@@ -93,7 +94,7 @@
                     Style="{StaticResource ControlButton}">
                     <Path
                         Data="{StaticResource Close}"
-                        Fill="{StaticResource MainColorLight}"
+                        Fill="{DynamicResource MainColorLight}"
                         Stretch="Uniform"
                         Width="15"
                         Height="15">
@@ -110,7 +111,7 @@
                     <Path
                         Data="{StaticResource Minimize}"
                         Stretch="Uniform"
-                        Fill="{StaticResource MainColorLight}"
+                        Fill="{DynamicResource MainColorLight}"
                         Width="15"
                         Height="15">
                     </Path>
@@ -118,7 +119,7 @@
             </Grid>
             <Grid
                 Grid.Row="1"
-                Background="{StaticResource Background}">
+                Background="{DynamicResource Background}">
                 <Frame
                     x:Name="Main"
                     NavigationUIVisibility="Hidden"

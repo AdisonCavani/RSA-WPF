@@ -16,7 +16,7 @@
         <!--#region Menu Text Style-->
         <Style x:Key="MenuTextStyle" TargetType="{x:Type TextBlock}">
 
-            <Setter Property="Foreground" Value="{StaticResource MainColorLight}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MainColorLight}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -27,11 +27,11 @@
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
-                    <Setter Property="Foreground" Value="{StaticResource MainColorLight}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource MainColorLight}"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
-                    <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -70,7 +70,7 @@
                                     Stretch="Uniform"
                                     Height="17"
                                     Width="18"
-                                    Fill="{StaticResource MainColorLight}"/>
+                                    Fill="{DynamicResource MainColorLight}"/>
 
                                 <TextBlock
                                     Margin="20,0,0,0"
@@ -91,11 +91,11 @@
                                 <Setter Property="IsChecked" Value="True"/>
                             </DataTrigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource MenuButtonDarkGray}"/>
+                                <Setter Property="Background" Value="{DynamicResource MenuButtonDarkGray}"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="{StaticResource MainColor}"/>
-                                <Setter TargetName="icon" Property="Fill" Value="{StaticResource MenuButtonIcon}"/>
+                                <Setter Property="Background" Value="{DynamicResource MenuButtonPressed}"/>
+                                <Setter TargetName="icon" Property="Fill" Value="{DynamicResource MenuButtonIcon}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

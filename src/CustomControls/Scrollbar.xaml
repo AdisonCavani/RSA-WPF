@@ -42,7 +42,7 @@
         <Setter Property="Stylus.IsFlicksEnabled"
             Value="false" />
         <Setter Property="Foreground"
-            Value="{StaticResource MainColor}"/>
+            Value="{DynamicResource Scrollbar}"/>
         <Setter Property="Background"
             Value="Transparent" />
         <Setter Property="Width"
@@ -84,7 +84,7 @@
                                 Property="IsMouseOver"
                                 Value="true">
                             <Setter
-                                Value="{StaticResource ButtonMouseOver}"
+                                Value="{DynamicResource ScrollbarOnHover}"
                                 TargetName="Thumb"
                                 Property="Background"/>
                         </Trigger>
@@ -93,7 +93,7 @@
                             Property="IsDragging"
                             Value="true">
                             <Setter
-                                Value="{StaticResource ButtonPressed}"
+                                Value="{DynamicResource ScrollbarOnHover}"
                                 TargetName="Thumb"
                                 Property="Background"/>
                         </Trigger>

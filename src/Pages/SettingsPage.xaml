@@ -8,7 +8,7 @@
       d:DesignHeight="610"
       d:DesignWidth="772"
       Title="SettingsPage"
-      Background="{StaticResource Background}">
+      Background="{DynamicResource Background}">
 
     <Grid>
         <TextBlock

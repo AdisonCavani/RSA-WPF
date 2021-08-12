@@ -20,12 +20,12 @@
     <Grid>
         <Border
             CornerRadius="7"
-            Background="{StaticResource Background2}">
+            Background="{DynamicResource Background2}">
 
             <StackPanel
                 Orientation="Vertical"
                 Margin="0,20,0,20">
-
+ 
                 <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
@@ -33,7 +33,7 @@
                     Width="650">
 
                     <Border
-                        Background="{StaticResource SettingsPathBackground}"
+                        Background="{DynamicResource SettingsPathBackground}"
                         CornerRadius="35"
                         Width="35"
                         Height="35"
@@ -41,7 +41,7 @@
                         VerticalAlignment="Center">
                         <Path
                             Data="{StaticResource Monitor}"
-                            Fill="{StaticResource SettingsButtonForegroundPressed}"
+                            Fill="{DynamicResource SettingsPathForeground}"
                             Stretch="Uniform"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -61,7 +61,44 @@
                     <TextBlock/>
                 </Grid>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="{StaticResource SeparatorColor}" Height="1"/>
+                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,0,15"
+                    Width="650">
+                    <TextBlock
+                        Text="Theme"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Select program color theme"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <ComboBox
+                        x:Name="Theme"
+                        Width="110"
+                        Height="25"
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        SelectionChanged="SelectionChanged"
+                        Style="{StaticResource ComboBoxFlatStyle}">
+                        <ComboBoxItem
+                            x:Name="SystemTheme"
+                            Content="System"/>
+                        <ComboBoxItem
+                            x:Name="LightTheme"
+                            Content="Light"/>
+                        <ComboBoxItem
+                            x:Name="DarkTheme"
+                            Content="Dark"/>
+                    </ComboBox>
+                </Grid>
+
+                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
 
                 <Grid
                     HorizontalAlignment="Left"
@@ -101,7 +138,7 @@
                     </ComboBox>
                 </Grid>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="{StaticResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
+                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
 
                 <Grid
                     HorizontalAlignment="Left"
