@@ -15,7 +15,6 @@
 
         <!--#region Menu Text Style-->
         <Style x:Key="MenuTextStyle" TargetType="{x:Type TextBlock}">
-
             <Setter Property="Foreground" Value="{DynamicResource MainColorLight}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="13"/>
@@ -38,8 +37,8 @@
         <!--#endregion-->
 
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="180"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -48,7 +47,7 @@
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
                         <Border
                             CornerRadius="7"
-                            BorderThickness="5"
+                            BorderThickness="0"
                             Background="{TemplateBinding Background}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -61,7 +60,7 @@
 
                                 <Path
                                     x:Name="icon"
-                                    Margin="15, 0, 0, 0"
+                                    Margin="15,0,0,0"
                                     Data="{Binding Icon,
                                     ElementName=this,
                                     FallbackValue={StaticResource DefaultIcon},

@@ -38,9 +38,15 @@
                 Orientation="Vertical"
                 Background="{DynamicResource Background2}">
 
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type customcontrols:MenuButton}">
+                        <Setter Property="Margin" Value="0,5,0,5"/>
+                    </Style>
+                </StackPanel.Resources>
+
                 <!--#region Menu Buttons Section-->
                 <TextBlock
-                        Margin="20,90,0,15"
+                        Margin="25,90,0,15"
                         Text="M E N U"
                         Style="{StaticResource TitleText}"/>
 
