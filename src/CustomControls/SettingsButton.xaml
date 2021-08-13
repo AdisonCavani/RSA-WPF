@@ -34,7 +34,7 @@
         <!--#endregion-->
 
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Height" Value="37"/>
+            <Setter Property="Height" Value="27"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -43,11 +43,11 @@
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
                         <Border
                             CornerRadius="7"
-                            BorderThickness="5"
+                            BorderThickness="0"
                             Background="{TemplateBinding Background}">
                             <Grid>
                                 <TextBlock
-                                    Margin="20,0,20,0"
+                                    Margin="15,0,15,0"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center"
                                     Style="{StaticResource MenuTextStyle}"
