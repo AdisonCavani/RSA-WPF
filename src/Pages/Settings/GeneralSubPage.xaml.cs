@@ -27,11 +27,13 @@ namespace RSA_WPF.Pages.Settings
         {
             if (Properties.Settings.Default.Theme == 0)
             {
-                Theme.SelectedIndex = 0; // Set light theme
+                Theme.IsChecked = false; // Set light theme
+                ThemeName.Text = "Light";
             }
             else if (Properties.Settings.Default.Theme == 1)
             {
-                Theme.SelectedIndex = 1; // Set dark theme
+                Theme.IsChecked = true; // Set dark themes
+                ThemeName.Text = "Dark";
             }
         }
 
@@ -82,41 +84,23 @@ namespace RSA_WPF.Pages.Settings
             }
         }
 
-        private void Theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Theme_Click(object sender, RoutedEventArgs e)
         {
-            if (Theme.SelectedIndex == 0)
+            if (Theme.IsChecked == false)
             {
+                ThemeName.Text = "Light";
                 Properties.Settings.Default.Theme = 0;
                 Properties.Settings.Default.Save();
                 GetTheme.SwitchTheme();
             }
 
-            else if (Theme.SelectedIndex == 1)
+            else if (Theme.IsChecked == true)
             {
+                ThemeName.Text = "Dark";
                 Properties.Settings.Default.Theme = 1;
                 Properties.Settings.Default.Save();
                 GetTheme.SwitchTheme();
             }
-
-            #region Visibility
-
-            if (LightTheme.IsSelected == true)
-            {
-                LightTheme.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                LightTheme.Visibility = Visibility.Visible;
-            }
-            if (DarkTheme.IsSelected == true)
-            {
-                DarkTheme.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                DarkTheme.Visibility = Visibility.Visible;
-            }
-            #endregion
         }
 
         private void SelectionChanged(object sender, SelectionChangedEventArgs e)

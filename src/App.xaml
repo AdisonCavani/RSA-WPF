@@ -389,6 +389,31 @@
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
             </Style>
             <!--#endregion-->
+            
+            <!--#region ToggleButton-->
+            <Style TargetType="{x:Type local:Toggle}">
+                <Setter Property="Width" Value="45"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="Cursor" Value="Hand"/>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type local:Toggle}">
+                            <Border x:Name="bk" Background="{DynamicResource ToggleBackgroundOff}" CornerRadius="12">
+                                <Ellipse x:Name="ep" Fill="White" HorizontalAlignment="Left" Margin="2" Width="20"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="bk" Property="Background" Value="{DynamicResource ToggleBackgroundOn}"/>
+                                    <Setter TargetName="ep" Property="HorizontalAlignment" Value="Right"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--#endregion-->
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
