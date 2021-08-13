@@ -84,11 +84,8 @@
                         Margin="0,0,20,0"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"
-                        SelectionChanged="SelectionChanged"
+                        SelectionChanged="Theme_SelectionChanged"
                         Style="{StaticResource ComboBoxFlatStyle}">
-                        <ComboBoxItem
-                            x:Name="SystemTheme"
-                            Content="System"/>
                         <ComboBoxItem
                             x:Name="LightTheme"
                             Content="Light"/>

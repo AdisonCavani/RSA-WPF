@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Theme;
 
 namespace RSA_WPF
 {
@@ -12,6 +13,7 @@ namespace RSA_WPF
         {
             InitializeComponent();
             this.DataContext = this;
+            GetTheme.SwitchTheme();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

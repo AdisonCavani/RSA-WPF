@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using Theme;
 
 namespace RSA_WPF.Pages.Settings
 {
@@ -25,15 +27,11 @@ namespace RSA_WPF.Pages.Settings
         {
             if (Properties.Settings.Default.Theme == 0)
             {
-                Theme.SelectedIndex = 0; // Set system theme
+                Theme.SelectedIndex = 0; // Set light theme
             }
             else if (Properties.Settings.Default.Theme == 1)
             {
-                Theme.SelectedIndex = 1; // Set light theme
-            }
-            else if (Properties.Settings.Default.Theme == 2)
-            {
-                Theme.SelectedIndex = 2; // Set dark theme
+                Theme.SelectedIndex = 1; // Set dark theme
             }
         }
 
@@ -84,27 +82,46 @@ namespace RSA_WPF.Pages.Settings
             }
         }
 
-        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            #region Settings
-
             if (Theme.SelectedIndex == 0)
             {
                 Properties.Settings.Default.Theme = 0;
                 Properties.Settings.Default.Save();
+                GetTheme.SwitchTheme();
             }
 
             else if (Theme.SelectedIndex == 1)
             {
                 Properties.Settings.Default.Theme = 1;
                 Properties.Settings.Default.Save();
+                GetTheme.SwitchTheme();
             }
 
-            else if (Theme.SelectedIndex == 2)
+            #region Visibility
+
+            if (LightTheme.IsSelected == true)
             {
-                Properties.Settings.Default.Theme = 2;
-                Properties.Settings.Default.Save();
+                LightTheme.Visibility = Visibility.Collapsed;
             }
+            else
+            {
+                LightTheme.Visibility = Visibility.Visible;
+            }
+            if (DarkTheme.IsSelected == true)
+            {
+                DarkTheme.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                DarkTheme.Visibility = Visibility.Visible;
+            }
+            #endregion
+        }
+
+        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            #region Settings
 
             if (Clipboard.SelectedIndex == 0)
             {
@@ -158,35 +175,6 @@ namespace RSA_WPF.Pages.Settings
             {
                 Properties.Settings.Default.KeyLenght = 4096;
                 Properties.Settings.Default.Save();
-            }
-            #endregion
-
-            #region Theme
-            if (SystemTheme.IsSelected == true)
-            {
-                SystemTheme.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                SystemTheme.Visibility = Visibility.Visible;
-            }
-
-            if (DarkTheme.IsSelected == true)
-            {
-                DarkTheme.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                DarkTheme.Visibility = Visibility.Visible;
-            }
-
-            if (LightTheme.IsSelected == true)
-            {
-                LightTheme.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                LightTheme.Visibility = Visibility.Visible;
             }
             #endregion
 
