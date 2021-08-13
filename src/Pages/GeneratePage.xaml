@@ -69,6 +69,7 @@
                     <ComboBox
                         x:Name="KeySize"
                         Width="100"
+                        Height="30"
                         Margin="30,72,0,0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
@@ -94,7 +95,7 @@
                     <Button
                         x:Name="GenerateButton"
                         Width="90"
-                        Height="24"
+                        Height="32"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Content="Generate"

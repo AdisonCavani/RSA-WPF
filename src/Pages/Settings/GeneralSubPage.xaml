@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:RSA_WPF.Pages.Settings"
+      xmlns:local="clr-namespace:RSA_WPF.Pages.Settings" xmlns:local1="clr-namespace:RSA_WPF"
       mc:Ignorable="d" 
       d:DesignHeight="380"
       d:DesignWidth="690"
@@ -80,7 +80,7 @@
                     <ComboBox
                         x:Name="Theme"
                         Width="110"
-                        Height="25"
+                        Height="30"
                         Margin="0,0,20,0"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"
@@ -93,6 +93,10 @@
                             x:Name="DarkTheme"
                             Content="Dark"/>
                     </ComboBox>
+                    <!--<local1:Toggle
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>-->
+
                 </Grid>
 
                 <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
@@ -114,7 +118,7 @@
                     <ComboBox
                         x:Name="Clipboard"
                         Width="110"
-                        Height="25"
+                        Height="30"
                         Margin="0,0,20,0"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"
@@ -154,7 +158,7 @@
                     <ComboBox
                         x:Name="KeyLenght"
                         Width="110"
-                        Height="25"
+                        Height="30"
                         Margin="0,0,20,0"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"

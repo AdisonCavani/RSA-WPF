@@ -27,6 +27,10 @@
     <SolidColorBrush x:Key="TextBoxBorderBrushFocus" Color="#d0d0d0"/>
     <SolidColorBrush x:Key="Scrollbar" Color="#c1c1c1"/>
     <SolidColorBrush x:Key="ScrollbarOnHover" Color="#8f8f8f"/>
+    <SolidColorBrush x:Key="ToggleBackgroundOff" Color="#eeeeee"/>
+    <SolidColorBrush x:Key="ToggleBackgroundOn" Color="#5790f9"/>
+    <SolidColorBrush x:Key="ComboboxMouseOver" Color="#bebebc"/>
+    <SolidColorBrush x:Key="ComboboxPressed" Color="#8aa2cc"/>
     <!--#endregion-->
     
 </ResourceDictionary>
