@@ -16,7 +16,7 @@
             Text="Settings"
             Style="{StaticResource MainText2}"/>
         <StackPanel
-            Margin="36,110,0,0"
+            Margin="40,110,0,0"
             Orientation="Horizontal"
             VerticalAlignment="Top"
             HorizontalAlignment="Left">
