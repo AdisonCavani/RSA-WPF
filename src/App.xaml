@@ -419,24 +419,55 @@
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
             </Style>
             <!--#endregion-->
-            
+
             <!--#region ToggleButton-->
             <Style TargetType="{x:Type local:Toggle}">
                 <Setter Property="Width" Value="45"/>
                 <Setter Property="Height" Value="25"/>
                 <Setter Property="Cursor" Value="Hand"/>
-
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type local:Toggle}">
                             <Border x:Name="bk" Background="{DynamicResource ToggleBackgroundOff}" CornerRadius="12">
-                                <Ellipse x:Name="ep" Fill="White" HorizontalAlignment="Left" Margin="2" Width="20"/>
+                                <Ellipse x:Name="Slider" Fill="White" HorizontalAlignment="Left" Margin="2,2,2,2" Width="20"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsChecked" Value="True">
                                     <Setter TargetName="bk" Property="Background" Value="{DynamicResource ToggleBackgroundOn}"/>
-                                    <Setter TargetName="ep" Property="HorizontalAlignment" Value="Right"/>
                                 </Trigger>
+
+                                <EventTrigger RoutedEvent="Loaded">
+                                    <SkipStoryboardToFill BeginStoryboardName="Checked"/>
+                                    <SkipStoryboardToFill BeginStoryboardName="Unchecked"/>
+                                </EventTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Value="true">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard Name="Checked">
+                                            <Storyboard>
+                                                <ThicknessAnimationUsingKeyFrames
+                                                Storyboard.TargetName="Slider"
+                                                Storyboard.TargetProperty="Margin"
+                                                BeginTime="00:00:00"
+                                                SpeedRatio="8">
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:00:01" Value="23,2,2,2"/>
+                                                </ThicknessAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                    <DataTrigger.ExitActions>
+                                        <BeginStoryboard x:Name="Unchecked">
+                                            <Storyboard>
+                                                <ThicknessAnimationUsingKeyFrames
+                                                Storyboard.TargetName="Slider"
+                                                Storyboard.TargetProperty="Margin"
+                                                BeginTime="00:00:00"
+                                                SpeedRatio="8">
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:00:01" Value="2,2,2,2"/>
+                                                </ThicknessAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.ExitActions>
+                                </DataTrigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
