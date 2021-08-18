@@ -429,7 +429,7 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type local:Toggle}">
                             <Border x:Name="bk" Background="{DynamicResource ToggleBackgroundOff}" CornerRadius="12">
-                                <Ellipse x:Name="Slider" Fill="White" HorizontalAlignment="Left" Margin="2,2,2,2" Width="20"/>
+                                <Ellipse x:Name="Slider" Fill="White" HorizontalAlignment="Left" Margin="3" Width="18"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsChecked" Value="True">
@@ -449,7 +449,7 @@
                                                 Storyboard.TargetProperty="Margin"
                                                 BeginTime="00:00:00"
                                                 SpeedRatio="8">
-                                                    <SplineThicknessKeyFrame KeyTime="00:00:00:01" Value="23,2,2,2"/>
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:00:01" Value="24,3,3,3"/>
                                                 </ThicknessAnimationUsingKeyFrames>
                                             </Storyboard>
                                         </BeginStoryboard>
@@ -462,7 +462,7 @@
                                                 Storyboard.TargetProperty="Margin"
                                                 BeginTime="00:00:00"
                                                 SpeedRatio="8">
-                                                    <SplineThicknessKeyFrame KeyTime="00:00:00:01" Value="2,2,2,2"/>
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:00:01" Value="3"/>
                                                 </ThicknessAnimationUsingKeyFrames>
                                             </Storyboard>
                                         </BeginStoryboard>
