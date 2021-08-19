@@ -1,39 +1,28 @@
 ﻿using Octokit;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace Update
 {
     public class CheckForUpdate
     {
-        public static async Task CheckGitHubNewerVersion()
+        public static async Task<int> CheckGitHubNewerVersion()
         {
             GitHubClient client = new GitHubClient(new ProductHeaderValue("RSA-WPF"));
+            // Get all releases
             IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("AdisonCavani", "RSA-WPF");
+            // Get latest release
             var latest = releases[0];
 
+            // Get latest release tag name
             string latestGitHubVersion = releases[0].TagName;
+            // Current app version
             const string currentGithubVersion = "v1.2";
 
-            int comparasion = String.Compare(currentGithubVersion, latestGitHubVersion);
+            // Compare versions
+            int comparasion = string.Compare(currentGithubVersion, latestGitHubVersion);
 
-            if (comparasion < 0)
-            {
-                MessageBox.Show("Need update");
-            }
-            else if (comparasion > 0)
-            {
-                MessageBox.Show("Version ahead");
-            }
-            else
-            {
-                MessageBox.Show("Up to date!");
-            }
+            return comparasion;
         }
     }
 }

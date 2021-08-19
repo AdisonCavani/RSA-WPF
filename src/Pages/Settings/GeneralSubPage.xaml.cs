@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Theme;
+using Update;
 
 namespace RSA_WPF.Pages.Settings
 {
@@ -21,6 +26,8 @@ namespace RSA_WPF.Pages.Settings
             CheckTheme();
             CheckClipboard();
             CheckKeyLenght();
+            SetLastUpdate();
+            _ = LookForUpdate();
         }
 
         private void CheckTheme()
@@ -81,6 +88,55 @@ namespace RSA_WPF.Pages.Settings
             else if (Properties.Settings.Default.KeyLenght == 4096)
             {
                 KeyLenght.SelectedIndex = 4; // Set 4096 bit key
+            }
+        }
+
+        private void SetLastUpdate()
+        {
+            if (Properties.Settings.Default.Update == 0)
+            {
+                UpdateIcon.Data = Application.Current.Resources["UpToDate"] as Geometry;
+                UpdateStatus.Text = "Up to date";
+            }
+            else if (Properties.Settings.Default.Update == 1)
+            {
+                UpdateIcon.Data = Application.Current.Resources["NeedUpdate"] as Geometry;
+                UpdateStatus.Text = "Need update";
+            }
+            else if (Properties.Settings.Default.Update == 2)
+            {
+                UpdateIcon.Data = Application.Current.Resources["NeedDowngrade"] as Geometry;
+                UpdateStatus.Text = "Need downgrade";
+            }
+        }
+
+        public async Task LookForUpdate()
+        {
+            int comparasion = await Task.Run(() => CheckForUpdate.CheckGitHubNewerVersion());
+
+            if (comparasion < 0 && Properties.Settings.Default.Update != 1)
+            {
+                // Need update
+                UpdateIcon.Data = Application.Current.Resources["NeedUpdate"] as Geometry;
+                UpdateStatus.Text = "Need update";
+                Properties.Settings.Default.Update = 1;
+                Properties.Settings.Default.Save();
+            }
+            else if (comparasion > 0 && Properties.Settings.Default.Update != 2)
+            {
+                // Version ahead
+                UpdateIcon.Data = Application.Current.Resources["NeedDowngrade"] as Geometry;
+                UpdateStatus.Text = "Need downgrade";
+                Properties.Settings.Default.Update = 2;
+                Properties.Settings.Default.Save();
+            }
+            else if (comparasion == 0 && Properties.Settings.Default.Update != 0)
+            {
+                // Up to date
+                UpdateIcon.Data = Application.Current.Resources["UpToDate"] as Geometry;
+                UpdateStatus.Text = "Up to date";
+                Properties.Settings.Default.Update = 0;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -246,6 +302,14 @@ namespace RSA_WPF.Pages.Settings
                 E.Visibility = Visibility.Visible;
             }
             #endregion
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            Process myProcess = new Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://github.com/AdisonCavani/RSA-WPF/releases";
+            myProcess.Start();
         }
     }
 }

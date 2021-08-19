@@ -58,5 +58,17 @@ namespace RSA_WPF.Properties {
                 this["Theme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte Update {
+            get {
+                return ((byte)(this["Update"]));
+            }
+            set {
+                this["Update"] = value;
+            }
+        }
     }
 }

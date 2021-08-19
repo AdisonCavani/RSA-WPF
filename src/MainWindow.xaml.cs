@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Theme;
 using Update;
@@ -15,6 +16,7 @@ namespace RSA_WPF
             InitializeComponent();
             this.DataContext = this;
             GetTheme.SwitchTheme();
+            LookForUpdate();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -55,6 +57,32 @@ namespace RSA_WPF
         private void SettingsButton_Click(object sender, MouseButtonEventArgs e)
         {
             Main.Content = new SettingsPage();
+        }
+
+        private async void LookForUpdate()
+        {
+            int comparasion = await Task.Run(() => CheckForUpdate.CheckGitHubNewerVersion());
+
+            if (comparasion < 0 && Properties.Settings.Default.Update != 1)
+            {
+                // Need update
+                MessageBox.Show("Need update");
+                Properties.Settings.Default.Update = 1;
+                Properties.Settings.Default.Save();
+            }
+            else if (comparasion > 0 && Properties.Settings.Default.Update != 2)
+            {
+                // Version ahead
+                MessageBox.Show("Need downgrade");
+                Properties.Settings.Default.Update = 2;
+                Properties.Settings.Default.Save();
+            }
+            else if (comparasion == 0 && Properties.Settings.Default.Update != 0)
+            {
+                // Up to date
+                Properties.Settings.Default.Update = 0;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }

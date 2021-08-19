@@ -9,14 +9,6 @@
       d:DesignWidth="690"
       Title="General">
 
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/icons.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Page.Resources>
-
     <Grid>
         <Border
             CornerRadius="7"
@@ -69,6 +61,48 @@
                     Margin="20,15,0,15"
                     Width="650">
                     <TextBlock
+                        Text="Update"
+                        Style="{StaticResource SettingsMainText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Check for update"
+                        Style="{StaticResource SettingsText}"/>
+                    <TextBlock/>
+                    <TextBlock
+                        Text="Up to date"
+                        x:Name="UpdateStatus"
+                        Margin="0,0,60,0"
+                        Style="{StaticResource SettingsText}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        FontWeight="SemiBold"/>
+                    <TextBlock/>
+                    <Button
+                        Style="{StaticResource ExternalButton}"
+                        Click="Update_Click"
+                        Margin="0,0,20,0">
+                        <Path
+                            x:Name="UpdateIcon"
+                            Data="{DynamicResource UpToDate}"
+                            Fill="{DynamicResource SettingsTextForeground}"
+                            Stretch="Uniform"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Width="23"
+                            Height="23">
+                        </Path>
+                    </Button>
+                </Grid>
+                
+                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
+
+                <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,0,15"
+                    Width="650">
+                    <TextBlock
                         Text="Dark Theme"
                         Style="{StaticResource SettingsMainText}"/>
                     <TextBlock/>
@@ -80,9 +114,9 @@
                     <TextBlock
                         Text="Light"
                         x:Name="ThemeName"
-                        Margin="520,0,0,0"
+                        Margin="0,0,80,0"
                         Style="{StaticResource SettingsText}"
-                        HorizontalAlignment="Left"
+                        HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontWeight="SemiBold"/>
                     <TextBlock/>
