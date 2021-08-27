@@ -22,10 +22,9 @@ It can be used to send symetric key like AES or short message - depending on key
    * [Message complexity problem](#message-complexity-problem)
    * [How should I store my private and public key?](#how-should-i-store-my-private-and-public-key)
 
- - [Errors and exceptions](#errors-and-exceptions)
-   * [Cryptographic exception](#cryptographic-exception)
+ - [Technical details](#technical-details)
+   * [NuGet packages in use](#nuget-packages-in-use)
    * [Format exception](#format-exception)
-
 
 ## Installation
 
@@ -103,3 +102,14 @@ The best solution is to use a offline password manager, for example: [KeePassXC]
   This might cause this exception:
   - entering key in wrong format
   - entering cipher in wrong format
+
+ ## Technical details
+ 
+ ### NuGet packages in use
+ 
+- [Octokit](https://www.nuget.org/packages/Octokit/0.50.0) - checking GitHub API for a new release
+- [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/7.0.2) - displaying Windows notifications
+
+ ### Handling updates
+ 
+ By default application is checking for an update every 3 days. You can change that behaviour in settings. In order to update the app, you need to download latest release and install update
