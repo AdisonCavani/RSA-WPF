@@ -18,7 +18,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="LastUpdateCheck" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">1999-01-01</Value>
     </Setting>
     <Setting Name="CheckUpdateEvery" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>

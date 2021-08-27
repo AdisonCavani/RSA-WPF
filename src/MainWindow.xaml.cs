@@ -95,7 +95,6 @@ namespace RSA_WPF
                 Properties.Settings.Default.LastUpdateCheck = dateTime;
                 Properties.Settings.Default.Save();
             }
-            MessageBox.Show("Checked for update!");
         }
     }
 }
