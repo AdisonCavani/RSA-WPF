@@ -37,7 +37,7 @@ namespace RSA_WPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2048")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3072")]
         public int KeyLenght {
             get {
                 return ((int)(this["KeyLenght"]));

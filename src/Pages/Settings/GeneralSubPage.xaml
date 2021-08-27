@@ -25,7 +25,38 @@
                 Orientation="Vertical"
                 Margin="0,20,0,20">
 
+                    <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,0,0,20"
+                    Width="650">
 
+                        <Border
+                        Background="{DynamicResource SettingsPathBackground}"
+                        CornerRadius="35"
+                        Width="35"
+                        Height="35"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                            <Path
+                            Data="{StaticResource Monitor}"
+                            Fill="{DynamicResource SettingsPathForeground}"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="15"
+                            Height="15"/>
+                        </Border>
+
+                        <TextBlock
+                        Margin="50,0,0,0"
+                        Text="General"
+                        Style="{StaticResource SettingsMainText}"/>
+                        <TextBlock
+                        Margin="50,25,0,0"
+                        Text="Change settings that affect RSA in general"
+                        Style="{StaticResource SettingsText}"/>
+                    </Grid>
 
                     <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1"/>
 
@@ -63,6 +94,44 @@
                             Width="23"
                             Height="23"/>
                         </Button>
+                    </Grid>
+
+                    <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
+
+                    <Grid
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,15,0,15"
+                    Width="650">
+                        <TextBlock
+                        Text="Check for update"
+                        Style="{StaticResource SettingsMainText}"/>
+                        <TextBlock
+                        Margin="0,25,0,0"
+                        Text="Set update availability period"
+                        Style="{StaticResource SettingsText}"/>
+                        <ComboBox
+                        x:Name="UpdatePeriod"
+                        Width="110"
+                        Height="30"
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        SelectionChanged="SelectionChanged"
+                        Style="{StaticResource ComboBoxFlatStyle}">
+                            <ComboBoxItem
+                                x:Name="ThreeDays"
+                                Content="3 days"/>
+                            <ComboBoxItem
+                                x:Name="OneWeek"
+                                Content="1 week"/>
+                            <ComboBoxItem
+                                x:Name="OneMonth"
+                                Content="1 month"/>
+                            <ComboBoxItem
+                                x:Name="NeverUpdate"
+                                Content="Never"/>
+                        </ComboBox>
                     </Grid>
 
                     <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>

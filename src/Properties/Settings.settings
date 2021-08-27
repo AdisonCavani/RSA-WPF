@@ -6,7 +6,7 @@
       <Value Profile="(Default)">30</Value>
     </Setting>
     <Setting Name="KeyLenght" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2048</Value>
+      <Value Profile="(Default)">3072</Value>
     </Setting>
     <Setting Name="Theme" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">1</Value>

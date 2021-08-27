@@ -23,10 +23,32 @@ namespace RSA_WPF.Pages.Settings
 
         public void CheckSettings()
         {
+            CheckTimeUpdate();
             CheckTheme();
             CheckClipboard();
             CheckKeyLenght();
             SetLastUpdate();
+        }
+
+        private void CheckTimeUpdate()
+        {
+            if (Properties.Settings.Default.CheckUpdateEvery == 3)
+            {
+                UpdatePeriod.SelectedIndex = 0; // Set 3 days
+            }
+            else if (Properties.Settings.Default.CheckUpdateEvery == 7)
+            {
+                UpdatePeriod.SelectedIndex = 1; // Set 7 days
+            }
+            else if (Properties.Settings.Default.CheckUpdateEvery == 30)
+            {
+                UpdatePeriod.SelectedIndex = 2; // Set 30 days
+            }
+
+            else if (Properties.Settings.Default.CheckUpdateEvery == 0)
+            {
+                UpdatePeriod.SelectedIndex = 3; // Set never
+            }
         }
 
         private void CheckTheme()
@@ -132,6 +154,30 @@ namespace RSA_WPF.Pages.Settings
         {
             #region Settings
 
+            if (UpdatePeriod.SelectedIndex == 0)
+            {
+                Properties.Settings.Default.CheckUpdateEvery = 3;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (UpdatePeriod.SelectedIndex == 1)
+            {
+                Properties.Settings.Default.CheckUpdateEvery = 7;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (UpdatePeriod.SelectedIndex == 2)
+            {
+                Properties.Settings.Default.CheckUpdateEvery = 30;
+                Properties.Settings.Default.Save();
+            }
+
+            else if (UpdatePeriod.SelectedIndex == 3)
+            {
+                Properties.Settings.Default.CheckUpdateEvery = 0;
+                Properties.Settings.Default.Save();
+            }
+
             if (Clipboard.SelectedIndex == 0)
             {
                 Properties.Settings.Default.ClearClipboardTime = 0;
@@ -184,6 +230,41 @@ namespace RSA_WPF.Pages.Settings
             {
                 Properties.Settings.Default.KeyLenght = 4096;
                 Properties.Settings.Default.Save();
+            }
+            #endregion
+
+            #region Update
+            if (ThreeDays.IsSelected == true)
+            {
+                ThreeDays.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ThreeDays.Visibility = Visibility.Visible;
+            }
+            if (OneWeek.IsSelected == true)
+            {
+                OneWeek.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                OneWeek.Visibility = Visibility.Visible;
+            }
+            if (OneMonth.IsSelected == true)
+            {
+                OneMonth.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                OneMonth.Visibility = Visibility.Visible;
+            }
+            if (NeverUpdate.IsSelected == true)
+            {
+                NeverUpdate.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                NeverUpdate.Visibility = Visibility.Visible;
             }
             #endregion
 
