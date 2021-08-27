@@ -27,7 +27,6 @@ namespace RSA_WPF.Pages.Settings
             CheckClipboard();
             CheckKeyLenght();
             SetLastUpdate();
-            _ = LookForUpdate();
         }
 
         private void CheckTheme()
@@ -101,42 +100,12 @@ namespace RSA_WPF.Pages.Settings
             else if (Properties.Settings.Default.Update == 1)
             {
                 UpdateIcon.Data = Application.Current.Resources["NeedUpdate"] as Geometry;
-                UpdateStatus.Text = "Need update";
+                UpdateStatus.Text = "Need update to: " + Properties.Settings.Default.LatestRelease;
             }
             else if (Properties.Settings.Default.Update == 2)
             {
                 UpdateIcon.Data = Application.Current.Resources["NeedDowngrade"] as Geometry;
-                UpdateStatus.Text = "Need downgrade";
-            }
-        }
-
-        public async Task LookForUpdate()
-        {
-            int comparasion = await Task.Run(() => CheckForUpdate.CheckGitHubNewerVersion());
-
-            if (comparasion < 0 && Properties.Settings.Default.Update != 1)
-            {
-                // Need update
-                UpdateIcon.Data = Application.Current.Resources["NeedUpdate"] as Geometry;
-                UpdateStatus.Text = "Need update";
-                Properties.Settings.Default.Update = 1;
-                Properties.Settings.Default.Save();
-            }
-            else if (comparasion > 0 && Properties.Settings.Default.Update != 2)
-            {
-                // Version ahead
-                UpdateIcon.Data = Application.Current.Resources["NeedDowngrade"] as Geometry;
-                UpdateStatus.Text = "Need downgrade";
-                Properties.Settings.Default.Update = 2;
-                Properties.Settings.Default.Save();
-            }
-            else if (comparasion == 0 && Properties.Settings.Default.Update != 0)
-            {
-                // Up to date
-                UpdateIcon.Data = Application.Current.Resources["UpToDate"] as Geometry;
-                UpdateStatus.Text = "Up to date";
-                Properties.Settings.Default.Update = 0;
-                Properties.Settings.Default.Save();
+                UpdateStatus.Text = "Need downgrade to: " + Properties.Settings.Default.LatestRelease;
             }
         }
 

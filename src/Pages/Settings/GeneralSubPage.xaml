@@ -5,71 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:RSA_WPF"
       mc:Ignorable="d" 
-      d:DesignHeight="380"
-      d:DesignWidth="690"
       Title="General">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CustomControls/Scrollbar.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid>
         <Border
             CornerRadius="7"
             Background="{DynamicResource Background2}">
 
-            <StackPanel
+            <ScrollViewer>
+                <StackPanel
                 Orientation="Vertical"
                 Margin="0,20,0,20">
- 
-                <Grid
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="20,0,0,20"
-                    Width="650">
 
-                    <Border
-                        Background="{DynamicResource SettingsPathBackground}"
-                        CornerRadius="35"
-                        Width="35"
-                        Height="35"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center">
-                        <Path
-                            Data="{StaticResource Monitor}"
-                            Fill="{DynamicResource SettingsPathForeground}"
-                            Stretch="Uniform"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Width="15"
-                            Height="15"/>
-                    </Border>
 
-                    <TextBlock
-                        Margin="50,0,0,0"
-                        Text="General"
-                        Style="{StaticResource SettingsMainText}"/>
-                    <TextBlock/>
-                    <TextBlock
-                        Margin="50,25,0,0"
-                        Text="Change settings that affect RSA in general"
-                        Style="{StaticResource SettingsText}"/>
-                    <TextBlock/>
-                </Grid>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1"/>
+                    <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1"/>
 
-                <Grid
+                    <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Margin="20,15,0,15"
                     Width="650">
-                    <TextBlock
+                        <TextBlock
                         Text="Update"
                         Style="{StaticResource SettingsMainText}"/>
-                    <TextBlock/>
-                    <TextBlock
+                        <TextBlock
                         Margin="0,25,0,0"
                         Text="Check for update"
                         Style="{StaticResource SettingsText}"/>
-                    <TextBlock/>
-                    <TextBlock
+                        <TextBlock
                         Text="Up to date"
                         x:Name="UpdateStatus"
                         Margin="0,0,60,0"
@@ -77,12 +49,11 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontWeight="SemiBold"/>
-                    <TextBlock/>
-                    <Button
+                        <Button
                         Style="{StaticResource ExternalButton}"
                         Click="Update_Click"
                         Margin="0,0,20,0">
-                        <Path
+                            <Path
                             x:Name="UpdateIcon"
                             Data="{DynamicResource UpToDate}"
                             Fill="{DynamicResource SettingsTextForeground}"
@@ -90,28 +61,25 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Width="23"
-                            Height="23">
-                        </Path>
-                    </Button>
-                </Grid>
-                
-                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
+                            Height="23"/>
+                        </Button>
+                    </Grid>
 
-                <Grid
+                    <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
+
+                    <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Margin="20,15,0,15"
                     Width="650">
-                    <TextBlock
+                        <TextBlock
                         Text="Dark Theme"
                         Style="{StaticResource SettingsMainText}"/>
-                    <TextBlock/>
-                    <TextBlock
+                        <TextBlock
                         Margin="0,25,0,0"
                         Text="Enable or disable dark theme"
                         Style="{StaticResource SettingsText}"/>
-                    <TextBlock/>
-                    <TextBlock
+                        <TextBlock
                         Text="Light"
                         x:Name="ThemeName"
                         Margin="0,0,80,0"
@@ -119,33 +87,29 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         FontWeight="SemiBold"/>
-                    <TextBlock/>
-                    <local:Toggle
+                        <local:Toggle
                         x:Name="Theme"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Margin="0,0,20,0"
                         Click="Theme_Click"/>
+                    </Grid>
 
-                </Grid>
+                    <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
-
-                <Grid
+                    <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Margin="20,15,0,15"
                     Width="650">
-                    <TextBlock
+                        <TextBlock
                         Text="Clipboard"
                         Style="{StaticResource SettingsMainText}"/>
-                    <TextBlock/>
-                    <TextBlock
+                        <TextBlock
                         Margin="0,25,0,0"
                         Text="Set time after clipboard will clear"
                         Style="{StaticResource SettingsText}"/>
-                    <TextBlock/>
-                    <ComboBox
+                        <ComboBox
                         x:Name="Clipboard"
                         Width="110"
                         Height="30"
@@ -154,38 +118,36 @@
                         HorizontalAlignment="Right"
                         SelectionChanged="SelectionChanged"
                         Style="{StaticResource ComboBoxFlatStyle}">
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="Never"
                             Content="Never"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="Fifteen"
                             Content="15 seconds"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="Thirty"
                             Content="30 seconds"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="Minute"
                             Content="1 minute"/>
-                    </ComboBox>
-                </Grid>
+                        </ComboBox>
+                    </Grid>
 
-                <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
+                    <Rectangle HorizontalAlignment="Stretch" Fill="{DynamicResource SeparatorColor}" Height="1" Margin="20,0,20,0"/>
 
-                <Grid
+                    <Grid
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Margin="20,15,0,15"
                     Width="650">
-                    <TextBlock
+                        <TextBlock
                         Text="Key lenght"
                         Style="{StaticResource SettingsMainText}"/>
-                    <TextBlock/>
-                    <TextBlock
+                        <TextBlock
                         Margin="0,25,0,0"
                         Text="Set default key lenght"
                         Style="{StaticResource SettingsText}"/>
-                    <TextBlock/>
-                    <ComboBox
+                        <ComboBox
                         x:Name="KeyLenght"
                         Width="110"
                         Height="30"
@@ -194,24 +156,25 @@
                         HorizontalAlignment="Right"
                         SelectionChanged="SelectionChanged"
                         Style="{StaticResource ComboBoxFlatStyle}">
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="A"
                             Content="512 bit"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="B"
                             Content="1024 bit"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="C"
                             Content="2048 bit"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="D"
                             Content="3072 bit"/>
-                        <ComboBoxItem
+                            <ComboBoxItem
                             x:Name="E"
                             Content="4096 bit"/>
-                    </ComboBox>
-                </Grid>
-            </StackPanel>
+                        </ComboBox>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
         </Border>
     </Grid>
 </Page>

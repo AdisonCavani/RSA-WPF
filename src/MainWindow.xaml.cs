@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Octokit;
+using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Theme;
@@ -14,9 +16,12 @@ namespace RSA_WPF
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
             GetTheme.SwitchTheme();
-            LookForUpdate();
+
+            if ((DateTime.Today - Properties.Settings.Default.LastUpdateCheck).TotalDays >= Properties.Settings.Default.CheckUpdateEvery)
+            {
+                LookForUpdate();
+            }
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -62,27 +67,35 @@ namespace RSA_WPF
         private async void LookForUpdate()
         {
             int comparasion = await Task.Run(() => CheckForUpdate.CheckGitHubNewerVersion());
+            string latestRelease = await Task.Run(() => CheckForUpdate.GetLatestRelease());
 
-            if (comparasion < 0 && Properties.Settings.Default.Update != 1)
+            var dateTime = DateTime.Today;
+
+            if (comparasion < 0)
             {
                 // Need update
-                MessageBox.Show("Need update");
                 Properties.Settings.Default.Update = 1;
+                Properties.Settings.Default.LatestRelease = latestRelease;
+                Properties.Settings.Default.LastUpdateCheck = dateTime;
                 Properties.Settings.Default.Save();
             }
-            else if (comparasion > 0 && Properties.Settings.Default.Update != 2)
+            else if (comparasion > 0)
             {
                 // Version ahead
-                MessageBox.Show("Need downgrade");
                 Properties.Settings.Default.Update = 2;
+                Properties.Settings.Default.LatestRelease = latestRelease;
+                Properties.Settings.Default.LastUpdateCheck = dateTime;
                 Properties.Settings.Default.Save();
             }
-            else if (comparasion == 0 && Properties.Settings.Default.Update != 0)
+            else if (comparasion == 0)
             {
                 // Up to date
                 Properties.Settings.Default.Update = 0;
+                Properties.Settings.Default.LatestRelease = latestRelease;
+                Properties.Settings.Default.LastUpdateCheck = dateTime;
                 Properties.Settings.Default.Save();
             }
+            MessageBox.Show("Checked for update!");
         }
     }
 }

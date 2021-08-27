@@ -70,5 +70,40 @@ namespace RSA_WPF.Properties {
                 this["Update"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LatestRelease {
+            get {
+                return ((string)(this["LatestRelease"]));
+            }
+            set {
+                this["LatestRelease"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime LastUpdateCheck {
+            get {
+                return ((global::System.DateTime)(this["LastUpdateCheck"]));
+            }
+            set {
+                this["LastUpdateCheck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int CheckUpdateEvery {
+            get {
+                return ((int)(this["CheckUpdateEvery"]));
+            }
+            set {
+                this["CheckUpdateEvery"] = value;
+            }
+        }
     }
 }

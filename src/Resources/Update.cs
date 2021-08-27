@@ -24,5 +24,16 @@ namespace Update
 
             return comparasion;
         }
+
+        public static async Task<string> GetLatestRelease()
+        {
+            GitHubClient client = new GitHubClient(new ProductHeaderValue("RSA-WPF"));
+            // Get all releases
+            IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("AdisonCavani", "RSA-WPF");
+            // Get latest release
+            var latest = releases[0];
+
+            return releases[0].TagName;
+        }
     }
 }
