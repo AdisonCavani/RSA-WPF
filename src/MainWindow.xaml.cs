@@ -16,9 +16,7 @@ namespace RSA_WPF
             InitializeComponent();
 
             if ((DateTime.Today - Properties.Settings.Default.LastUpdateCheck).TotalDays >= Properties.Settings.Default.CheckUpdateEvery)
-            {
                 LookForUpdate();
-            }
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

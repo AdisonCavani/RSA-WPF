@@ -30,9 +30,8 @@ namespace Update
             GitHubClient client = new GitHubClient(new ProductHeaderValue("RSA-WPF"));
             // Get all releases
             IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("AdisonCavani", "RSA-WPF");
-            // Get latest release
-            var latest = releases[0];
 
+            // Return latest release
             return releases[0].TagName;
         }
     }
