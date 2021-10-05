@@ -21,16 +21,28 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="FontFamily" Value="Seoge UI"/>
             <Setter Property="Margin" Value="11, 0, 0, 0"/>
-
-            <!--Change foreground on MouseOver and Menu item Selection-->
             <Style.Triggers>
-                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
-                             Value="True">
-                    <Setter Property="Foreground" Value="{DynamicResource MainColorLight}"/>
-                </DataTrigger>
+                <!--Change text foreground on IsChecked-->
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}"
                              Value="True">
-                    <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)">
+                                    <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource ForegroundColor}"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard FillBehavior="Stop">
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)">
+                                    <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource MainColorLightColor}"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.ExitActions>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -41,7 +53,7 @@
             <Setter Property="Width" Value="180"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Background" Value="{DynamicResource Background2}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -89,12 +101,54 @@
                                 Value="True">
                                 <Setter Property="IsChecked" Value="True"/>
                             </DataTrigger>
+
+                            <!--Change background and icon fill on IsMouseOver-->
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{DynamicResource MenuButtonDarkGray}"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
+                                                <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource MenuButtonDarkGrayColor}"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard FillBehavior="Stop">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
+                                                <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource Background2Color}"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
                             </Trigger>
+                            <!--Change background and icon fill on IsChecked-->
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="{DynamicResource MenuButtonPressed}"/>
-                                <Setter TargetName="icon" Property="Fill" Value="{DynamicResource MenuButtonIcon}"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
+                                                <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource MenuButtonPressedColor}"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="icon" Storyboard.TargetProperty="(Fill).(SolidColorBrush.Color)">
+                                                <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource MenuButtonIconColor}"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard FillBehavior="Stop">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
+                                                <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource Background2Color}"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="icon" Storyboard.TargetProperty="(Fill).(SolidColorBrush.Color)">
+                                                <LinearColorKeyFrame KeyTime="0:0:0.2" Value="{StaticResource MenuButtonIconColor}"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

@@ -17,7 +17,7 @@ namespace Update
             // Get latest release tag name
             string latestGitHubVersion = releases[0].TagName;
             // Current app version
-            const string currentGithubVersion = "v1.2";
+            const string currentGithubVersion = "v1.3";
 
             // Compare versions
             int comparasion = string.Compare(currentGithubVersion, latestGitHubVersion);

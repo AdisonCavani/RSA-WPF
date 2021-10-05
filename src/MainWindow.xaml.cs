@@ -1,9 +1,7 @@
-﻿using Octokit;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Theme;
 using Update;
 
 namespace RSA_WPF
@@ -16,7 +14,6 @@ namespace RSA_WPF
         public MainWindow()
         {
             InitializeComponent();
-            GetTheme.SwitchTheme();
 
             if ((DateTime.Today - Properties.Settings.Default.LastUpdateCheck).TotalDays >= Properties.Settings.Default.CheckUpdateEvery)
             {
@@ -40,28 +37,32 @@ namespace RSA_WPF
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                this.DragMove();
+                DragMove();
             }
         }
 
         private void EncryptButton_Click(object sender, MouseButtonEventArgs e)
         {
-            Main.Content = new EncryptPage();
+            if (Main.Content.ToString() != "RSA_WPF.EncryptPage")
+                Main.Content = new EncryptPage();
         }
 
         private void DecryptButton_Click(object sender, MouseButtonEventArgs e)
         {
-            Main.Content = new DecryptPage();
+            if (Main.Content.ToString() != "RSA_WPF.DecryptPage")
+                Main.Content = new DecryptPage();
         }
 
         private void GenerateButton_Click(object sender, MouseButtonEventArgs e)
         {
-            Main.Content = new GeneratePage();
+            if (Main.Content.ToString() != "RSA_WPF.GeneratePage")
+                Main.Content = new GeneratePage();
         }
 
         private void SettingsButton_Click(object sender, MouseButtonEventArgs e)
         {
-            Main.Content = new SettingsPage();
+            if (Main.Content.ToString() != "RSA_WPF.SettingsPage")
+                Main.Content = new SettingsPage();
         }
 
         private async void LookForUpdate()

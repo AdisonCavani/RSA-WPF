@@ -1,12 +1,7 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Theme;
-using Update;
 
 namespace RSA_WPF.Pages.Settings
 {
@@ -138,7 +133,9 @@ namespace RSA_WPF.Pages.Settings
                 ThemeName.Text = "Light";
                 Properties.Settings.Default.Theme = 0;
                 Properties.Settings.Default.Save();
-                GetTheme.SwitchTheme();
+
+                Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+                Application.Current.Shutdown();
             }
 
             else if (Theme.IsChecked == true)
@@ -146,7 +143,9 @@ namespace RSA_WPF.Pages.Settings
                 ThemeName.Text = "Dark";
                 Properties.Settings.Default.Theme = 1;
                 Properties.Settings.Default.Save();
-                GetTheme.SwitchTheme();
+
+                Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+                Application.Current.Shutdown();
             }
         }
 

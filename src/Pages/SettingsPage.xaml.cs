@@ -16,17 +16,20 @@ namespace RSA_WPF
 
         private void GeneralButton_Click(object sender, MouseButtonEventArgs e)
         {
-            SettingFrame.Content = new GeneralSubPage();
+            if (SettingFrame.Content.ToString() != "RSA_WPF.Pages.Settings.GeneralSubPage")
+                SettingFrame.Content = new GeneralSubPage();
         }
 
         private void AboutButton_Click(object sender, MouseButtonEventArgs e)
         {
-            SettingFrame.Content = new AboutSubPage();
+            if (SettingFrame.Content.ToString() != "RSA_WPF.Pages.Settings.AboutSubPage")
+                SettingFrame.Content = new AboutSubPage();
         }
 
         private void HelpButton_Click(object sender, MouseButtonEventArgs e)
         {
-            SettingFrame.Content = new HelpSubPage();
+            if (SettingFrame.Content.ToString() != "RSA_WPF.Pages.Settings.HelpSubPage")
+                SettingFrame.Content = new HelpSubPage();
         }
     }
 }

@@ -17,7 +17,7 @@
     <SolidColorBrush x:Key="SelectionBrush" Color="#0c0c0d"/>
     <SolidColorBrush x:Key="SettingsTextForeground" Color="#a4a5a5"/>
     <SolidColorBrush x:Key="SettingsButtonBackground" Color="#eaeff9"/>
-    <SolidColorBrush x:Key="SettingsButtonBackgroundMouseOver" Color="Transparent"/>
+    <SolidColorBrush x:Key="SettingsButtonBackgroundMouseOver" Color="#f9f9f9"/>
     <SolidColorBrush x:Key="SettingsButtonForeground" Color="#a4a4a4"/>
     <SolidColorBrush x:Key="SettingsButtonForegroundPressed" Color="#6490f1"/>
     <SolidColorBrush x:Key="SettingsPathBackground" Color="#e0e9fc"/>
@@ -32,6 +32,17 @@
     <SolidColorBrush x:Key="ComboboxMouseOver" Color="#bebebc"/>
     <SolidColorBrush x:Key="ComboboxPressed" Color="#8aa2cc"/>
     <SolidColorBrush x:Key="ComboboxItemMouseOver" Color="#eaeaec"/>
+    <Color x:Key="Background2Color" R="255" G="255" B="255" A="255"/>
+    <Color x:Key="ForegroundColor" R="20" G="37" B="51" A="255"/>
+    <Color x:Key="MainColorLightColor" R="155" G="155" B="155" A="255"/>
+    <Color x:Key="MenuButtonPressedColor" R="249" G="249" B="249" A="255"/>
+    <Color x:Key="MenuButtonIconColor" R="100" G="144" B="241" A="255"/>
+    <Color x:Key="MenuButtonDarkGrayColor" R="249" G="249" B="249" A="255"/>
+    <Color x:Key="SettingsButtonForegroundPressedColor" R="100" G="144" B="241" A="255"/>
+    <Color x:Key="SettingsButtonForegroundColor" R="164" G="164" B="164" A="255"/>
+    <Color x:Key="BackgroundColor" R="249" G="249" B="249" A="255"/>
+    <Color x:Key="SettingsButtonBackgroundColor" R="234" G="239" B="249" A="255"/>
+    <Color x:Key="SettingsButtonBackgroundMouseOverColor" R="242" G="244" B="249" A="255"/>
     <!--#endregion-->
-    
+
 </ResourceDictionary>
