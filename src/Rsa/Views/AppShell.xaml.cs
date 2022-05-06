@@ -1,4 +1,4 @@
-﻿namespace Rsa;
+﻿namespace Rsa.Views;
 
 public partial class AppShell : Shell
 {
